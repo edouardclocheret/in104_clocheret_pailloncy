@@ -1,1 +1,1 @@
-comme je te disais 6/10 me parait coherent 
+euh c'est pas très correct de ta part
