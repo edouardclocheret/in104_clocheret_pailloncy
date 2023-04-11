@@ -4,6 +4,7 @@
 
 int main(int argc, char *argv[])
 {
+    printf("running\n");
     if(0 != SDL_Init(SDL_INIT_VIDEO))
     {
         fprintf(stderr, "Erreur SDL_Init : %s", SDL_GetError());
