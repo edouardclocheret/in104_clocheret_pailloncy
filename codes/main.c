@@ -28,14 +28,18 @@ SDL_Window *window = NULL, *window2 = NULL;
     
     //Création du rendu
     SDL_Renderer* pRenderer;
-    pRenderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_SOFTWARE);       
+    pRenderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_TARGETTEXTURE);       
     if (pRenderer == NULL)     
     {         
         SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "[DEBUG] > %s", SDL_GetError());         
         SDL_Quit();         
         return EXIT_FAILURE;     
     }
-
+    
+    //dessin
+    SDL_RenderDrawLine(pRenderer, 1, 1, 6, 6);
+    
+    SDL_RenderPresent(pRenderer);
     SDL_Delay(3000);
     SDL_DestroyWindow(window);
 
