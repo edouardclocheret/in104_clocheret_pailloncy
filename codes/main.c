@@ -45,8 +45,7 @@ SDL_Window *window = NULL, *window2 = NULL;
 
     if(NULL != pRenderer) SDL_DestroyRenderer(pRenderer);
     if(NULL != window) SDL_DestroyWindow(window);
-    SDL_Quit();
-    
+
     SDL_Quit();
 
     return EXIT_SUCCESS;
