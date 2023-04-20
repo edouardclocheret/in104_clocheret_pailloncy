@@ -1,1 +1,1 @@
-struct bloc (int sens);
+bloc rotation (int sens);
