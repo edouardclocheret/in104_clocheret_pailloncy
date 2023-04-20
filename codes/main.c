@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "allinclude.h"
+
 int main(int argc, char *argv[]){
     
     
@@ -17,7 +19,7 @@ int main(int argc, char *argv[]){
     
     //Création et ouverture de la fenêtre
     
-SDL_Window *window = NULL, *window2 = NULL;
+    SDL_Window *window = NULL, *window2 = NULL;
     
     window = SDL_CreateWindow("SDL2", 100, 100, 640, 480, SDL_WINDOW_SHOWN);
     if(NULL == window)
@@ -39,6 +41,9 @@ SDL_Window *window = NULL, *window2 = NULL;
     //dessin
     SDL_RenderDrawLine(pRenderer, 1, 1, 6, 6);
     
+    //Actions
+    //rotation(-1);
+
     SDL_RenderPresent(pRenderer);
     SDL_Delay(3000);
     SDL_DestroyWindow(window);
