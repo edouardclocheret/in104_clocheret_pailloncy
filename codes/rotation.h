@@ -1,3 +1,3 @@
-#include "def_types_et_vars"
+#include "def_types_et_vars.h"
 
 bloc rotation (int sens);
