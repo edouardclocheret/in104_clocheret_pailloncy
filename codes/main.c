@@ -1,8 +1,10 @@
 #include <SDL2/SDL.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
-#include "allinclude.h"
+#include "all_def_functions.h"
+
 
 int main(int argc, char *argv[]){
     
@@ -10,12 +12,7 @@ int main(int argc, char *argv[]){
     printf("running\n");
 
     //Initialisation de SDL
-    
-    if(SDL_Init(SDL_INIT_VIDEO) <0)
-    {
-        fprintf(stderr, "Erreur SDL_Init : %s", SDL_GetError());
-        return EXIT_FAILURE;
-    }
+    initialisation();
     
     //Création et ouverture de la fenêtre
     
@@ -38,14 +35,26 @@ int main(int argc, char *argv[]){
         return EXIT_FAILURE;     
     }
     
-    //dessin
-    SDL_RenderDrawLine(pRenderer, 1, 1, 6, 6);
-    
-    //Actions
-    //rotation(-1);
+    //début du jeu
+
+    bool quit = false;
+    while(!quit) {
+
+        //preRender();
+
+        entree_clavier();
+
+        //updateTetris();
+
+        //updateRender();
+
+        // Pour jouer à environ 60 fps
+        // 1000 ms/ 60 fps = 1/16 s^2/frame
+        SDL_Delay(16);
+    }
+
 
     SDL_RenderPresent(pRenderer);
-    SDL_Delay(3000);
     SDL_DestroyWindow(window);
 
     if(NULL != pRenderer) SDL_DestroyRenderer(pRenderer);

@@ -2,5 +2,6 @@
 #define TYPES_ET_VARS
 #include "def_types_et_vars.h"
 #endif
-//fonction qui fait tourner le bloc
-bloc rotation (int sens);
+//cette fonction initialise la bibliothèque SDL
+int initialisation();
+

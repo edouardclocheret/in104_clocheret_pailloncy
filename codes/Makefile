@@ -1,19 +1,16 @@
-
 CFLAGS = -g `sdl2-config --cflags`
-LDFLAGS  = `sdl2-config --libs` -lSDL2_gfx -lSDL2_ttf -lm
+LDFLAGS = `sdl2-config --libs` -lSDL2_gfx -lSDL2_ttf -lm
 PROG = game
 CXX = gcc
-
-#Il faudra ensuite lier tous les fichiers .c et .o
-
-
+OBJS = initialisation.o entree_clavier.o down.o rotation.o main.o 
 # top-level rule to create the program.
 all: $(PROG)
 # compiling other source files.
-
-$(PROG): main.c
-	$(CXX) main.c -o $(PROG) $(LDFLAGS)
+%.o: %.c %.h
+	$(CXX) $(CFLAGS) -c $<
+# linking the program
+$(PROG): $(OBJS)
+	$(CXX) $(OBJS) -o $(PROG) $(LDFLAGS)
 # cleaning everything that can be automatically recreated with "make"
 clean:
 	rm $(PROG) *.o
-
