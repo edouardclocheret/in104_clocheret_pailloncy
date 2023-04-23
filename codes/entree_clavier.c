@@ -13,7 +13,7 @@ while (run) {
             if (events.key.keysym.sym == SDLK_Q)
                 rotation(-1);
             if (events.key.keysym.sym == SDLK_S)
-                down(); //chute du bluc, à programmer 
+                down(); //chute du bloc, à programmer 
             if (events.key.keysym.sym == SDLK_D)
                 rotation(1);
 
