@@ -18,7 +18,7 @@ void entree_clavier (){
                 if (event.key.keysym.sym == SDLK_q)
                     rotation(-1);
                 if (event.key.keysym.sym == SDLK_s)
-                    down(); //chute du bloc, à programmer 
+                    down(); //chute du bloc
                 if (event.key.keysym.sym == SDLK_d)
                     rotation(1);
 
