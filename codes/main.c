@@ -5,6 +5,7 @@
 
 #include "all_def_functions.h"
 
+//the falling bloc will be labeled "falling_meteor"
 
 int main(int argc, char *argv[]){
     

@@ -3,4 +3,5 @@
 #include "def_types_et_vars.h"
 #endif
 //fonction qui fait tourner le bloc
-bloc rotation (int sens);
+
+rotation (int sens);
