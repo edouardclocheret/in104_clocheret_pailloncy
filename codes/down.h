@@ -4,4 +4,4 @@
 #endif
 
 //fonction qui fait dessendre le bloc
-bloc down ();
+void down (bloc* falling_meteor);
