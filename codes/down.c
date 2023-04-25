@@ -2,7 +2,7 @@
 //fonction gerant la chute du bloc
 
 void down (bloc* falling_meteor){
-    while /*not colllision (a programmer) */{
+    /* if not colllision (a programmer) */
         falling_meteor->y=falling_meteor->y-1;
-    }
+    
 }

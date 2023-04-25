@@ -3,4 +3,4 @@
 #include "def_types_et_vars.h"
 #endif
 //sert à récupérer les entrées du clavier
-void entree_clavier ();
+void entree_clavier (bloc* falling_meteor);

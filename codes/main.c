@@ -36,6 +36,7 @@ int main(int argc, char *argv[]){
         return EXIT_FAILURE;     
     }
     
+    bloc* falling_meteor;
     //début du jeu
 
     bool quit = false;
@@ -43,7 +44,7 @@ int main(int argc, char *argv[]){
 
         //preRender();
 
-        entree_clavier();
+        entree_clavier (falling_meteor);
 
         //updateTetris();
 

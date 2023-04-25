@@ -9,18 +9,21 @@
 //touche D pour tourner le bloc vers la droite 
 //touche S pour faire descendre le bloc
 
-void entree_clavier (){
+void entree_clavier (bloc* falling_meteor){
     SDL_Event event;
     while (SDL_PollEvent(&event)) {
         switch(event.type) {
             case SDL_KEYDOWN:
 
-                if (event.key.keysym.sym == SDLK_q)
-                    rotation(-1);
-                if (event.key.keysym.sym == SDLK_s)
-                    down(); //chute du bloc
-                if (event.key.keysym.sym == SDLK_d)
-                    rotation(1);
+                if (event.key.keysym.sym == SDLK_q){
+                    //rotation(-1);
+                }
+                if (event.key.keysym.sym == SDLK_s){
+                    down (falling_meteor);
+                } //chute du bloc
+                if (event.key.keysym.sym == SDLK_d){
+                    //rotation(1);
+                }
 
                 break;
         }

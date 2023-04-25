@@ -4,4 +4,4 @@
 #endif
 //fonction qui fait tourner le bloc
 
-rotation (int sens);
+void rotation (int sens, bloc* falling_meteor);
