@@ -60,7 +60,7 @@ int main(int argc, char *argv[]){
 
         pre_render(pRenderer);
 
-        entree_clavier (falling_meteor);
+        //entree_clavier (falling_meteor);
 
         //updateTetris();
 
