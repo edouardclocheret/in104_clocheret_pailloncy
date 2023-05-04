@@ -42,7 +42,7 @@ int main(int argc, char *argv[]){
     bool quit = false;
     while(!quit) {
 
-        pre_render();
+        pre_render(pRenderer);
 
         entree_clavier (falling_meteor);
 

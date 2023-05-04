@@ -4,4 +4,4 @@
 #endif
 #include <SDL2/SDL.h>
 
-void pre_renderer(SDL_Renderer* pRenderer);
+void pre_render(SDL_Renderer* pRenderer);
