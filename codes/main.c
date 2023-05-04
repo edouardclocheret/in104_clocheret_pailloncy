@@ -42,13 +42,13 @@ int main(int argc, char *argv[]){
     bool quit = false;
     while(!quit) {
 
-        //preRender();
+        pre_render();
 
         entree_clavier (falling_meteor);
 
         //updateTetris();
 
-        //updateRender();
+        //update_renderer();
 
         // Pour jouer à environ 60 fps
         // 1000 ms/ 60 fps = 1/16 s^2/frame
