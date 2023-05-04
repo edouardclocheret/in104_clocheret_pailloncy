@@ -1,6 +1,5 @@
 
 #define taille_carreau 50
-#define dy 50
 
 //A name is given to each tetris bloc
 enum shape {I, O, T, L, J, Z, S};

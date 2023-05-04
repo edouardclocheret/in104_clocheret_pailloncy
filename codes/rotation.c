@@ -11,3 +11,5 @@ void rotation (int sens, bloc* falling_meteor){
         falling_meteor->rotation=(falling_meteor->rotation+1)%4;
     }
 }
+
+//redéfinir le carreau en bas à droite pour avoir des belles rotations
