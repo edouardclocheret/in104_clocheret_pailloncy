@@ -18,11 +18,13 @@ How to use :
 
 Project state :
 
-    - The definition of blocks is in def_types_et_vars.h We refer to them with the enum "shape" for its shape and the position of the lower right square, and the umber of rotations from the reference configuration.
+    - The definition of blocks is in def_types_et_vars.h We refer to them with the enum "shape" for its shape and the position of the higher left square, and the umber of rotations from the reference configuration.
 
     - We are working on the actions that the user makes using the keybord : down.c rotation.c 
 
-    - The graphics : initialisation.c update_render.c
+    - The graphics : initialisation.c 
+            
+            - pre_render.c is used to display every bloc according to its shape (if it is a I, J, L, Z, O bloc), orientation, and position 
 
     - The keyboard interactions : entree_clavier.c
 
