@@ -24,8 +24,7 @@ void pre_render(SDL_Renderer* pRenderer, bloc * falling_meteor){
             // Affichage du rectangle
             SDL_RenderFillRect(pRenderer, &rectangle);
 
-            // Mise à jour du rendu
-            SDL_RenderPresent(pRenderer);
+            
             break;
         case O:
             // Définition de la couleur du rectangle (jaune)
@@ -38,8 +37,7 @@ void pre_render(SDL_Renderer* pRenderer, bloc * falling_meteor){
             // Affichage du rectangle
             SDL_RenderFillRect(pRenderer, &rectangle);
 
-            // Mise à jour du rendu
-            SDL_RenderPresent(pRenderer);
+            
             break;
         case T:
             // Définition de la couleur du rectangle (violet)
@@ -57,8 +55,6 @@ void pre_render(SDL_Renderer* pRenderer, bloc * falling_meteor){
             // Affichage du rectangle
             SDL_RenderFillRect(pRenderer, &rectangle);
 
-            // Mise à jour du rendu
-            SDL_RenderPresent(pRenderer);
             break;
         case L:
              // Définition de la couleur du rectangle (orange)
@@ -77,8 +73,7 @@ void pre_render(SDL_Renderer* pRenderer, bloc * falling_meteor){
             // Affichage du rectangle
             SDL_RenderFillRect(pRenderer, &rectangle);
 
-            // Mise à jour du rendu
-            SDL_RenderPresent(pRenderer);
+            
             break;
         case J:
             // Définition de la couleur du rectangle (bleu)
@@ -97,8 +92,7 @@ void pre_render(SDL_Renderer* pRenderer, bloc * falling_meteor){
             // Affichage du rectangle
             SDL_RenderFillRect(pRenderer, &rectangle);
 
-            // Mise à jour du rendu
-            SDL_RenderPresent(pRenderer);
+            
             break;
         case Z:
             // Définition de la couleur du rectangle (rouge)
@@ -117,10 +111,9 @@ void pre_render(SDL_Renderer* pRenderer, bloc * falling_meteor){
             // Affichage du rectangle
             SDL_RenderFillRect(pRenderer, &rectangle);
 
-            // Mise à jour du rendu
-            SDL_RenderPresent(pRenderer);
+            
             break;
-        case S:
+        default : //case S
             // Définition de la couleur du rectangle (vert)
             SDL_SetRenderDrawColor(pRenderer, 0, 255, 0, 255);
             // Création du rectangle
@@ -137,10 +130,10 @@ void pre_render(SDL_Renderer* pRenderer, bloc * falling_meteor){
             // Affichage du rectangle
             SDL_RenderFillRect(pRenderer, &rectangle);
 
-            // Mise à jour du rendu
-            SDL_RenderPresent(pRenderer);
             break;
+        
     }
-
+// Mise à jour du rendu
+SDL_RenderPresent(pRenderer);
 
 }
