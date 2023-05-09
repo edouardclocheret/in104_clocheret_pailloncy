@@ -72,7 +72,7 @@ int main(int argc, char *argv[]){
     }
 
 
-    SDL_RenderPresent(pRenderer);
+    //SDL_RenderPresent(pRenderer);
     SDL_DestroyWindow(window);
 
     if(NULL != pRenderer) SDL_DestroyRenderer(pRenderer);

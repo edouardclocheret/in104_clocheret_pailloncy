@@ -3,20 +3,20 @@
 #include "def_types_et_vars.h"
 
 void pre_render(SDL_Renderer* pRenderer, bloc * falling_meteor){
+    SDL_Rect rectangle;
     switch(falling_meteor->son_nom){
         case I :
             // Définition de la couleur du rectangle (turquoise)
             SDL_SetRenderDrawColor(pRenderer, 255, 0, 255, 255);
-            // Création du rectangle
-            SDL_Rect rectangle;
+
 
             if (falling_meteor->rotation==0||falling_meteor->rotation==2){
-                SDL_Rect rectangle = { falling_meteor->x, 
+                rectangle = { falling_meteor->x, 
                                         falling_meteor->y, 
                                         4*taille_carreau, taille_carreau };
             }
             if (falling_meteor->rotation==1||falling_meteor->rotation==3){
-                SDL_Rect rectangle = { falling_meteor->x, 
+                rectangle = { falling_meteor->x, 
                                         falling_meteor->y, 
                                         taille_carreau, 4*taille_carreau };
             }
@@ -29,9 +29,8 @@ void pre_render(SDL_Renderer* pRenderer, bloc * falling_meteor){
         case O:
             // Définition de la couleur du rectangle (jaune)
             SDL_SetRenderDrawColor(pRenderer, 255, 255, 0, 255);
-            // Création du rectangle
-            SDL_Rect rectangle;
-            SDL_Rect rectangle = { falling_meteor->x-2*taille_carreau, 
+
+            rectangle = { falling_meteor->x-2*taille_carreau, 
                                         falling_meteor->y-2*taille_carreau, 
                                         2*taille_carreau, 2*taille_carreau };
             // Affichage du rectangle
@@ -42,14 +41,13 @@ void pre_render(SDL_Renderer* pRenderer, bloc * falling_meteor){
         case T:
             // Définition de la couleur du rectangle (violet)
             SDL_SetRenderDrawColor(pRenderer, 255, 0, 255, 255);
-            // Création du rectangle
-            SDL_Rect rectangle;
+            
             if (falling_meteor->rotation==0||falling_meteor->rotation==2){
-                SDL_Rect rectangle = { falling_meteor->x-3*taille_carreau, 
+                rectangle = { falling_meteor->x-3*taille_carreau, 
                                         falling_meteor->y-2*taille_carreau, 
                                         3*taille_carreau, 2*taille_carreau };}
             if (falling_meteor->rotation==1||falling_meteor->rotation==3){
-                SDL_Rect rectangle = { falling_meteor->x-2*taille_carreau, 
+                rectangle = { falling_meteor->x-2*taille_carreau, 
                                         falling_meteor->y-3*taille_carreau, 
                                         3*taille_carreau, 2*taille_carreau };}
             // Affichage du rectangle
@@ -59,14 +57,13 @@ void pre_render(SDL_Renderer* pRenderer, bloc * falling_meteor){
         case L:
              // Définition de la couleur du rectangle (orange)
             SDL_SetRenderDrawColor(pRenderer, 255, 128, 0, 255);
-            // Création du rectangle
-            SDL_Rect rectangle;
+            
             if (falling_meteor->rotation==0||falling_meteor->rotation==2){
-                SDL_Rect rectangle = { falling_meteor->x-3*taille_carreau, 
+                rectangle = { falling_meteor->x-3*taille_carreau, 
                                         falling_meteor->y-2*taille_carreau, 
                                         3*taille_carreau, 2*taille_carreau };}
             if (falling_meteor->rotation==1||falling_meteor->rotation==3){
-                SDL_Rect rectangle = { falling_meteor->x-2*taille_carreau, 
+                rectangle = { falling_meteor->x-2*taille_carreau, 
                                         falling_meteor->y-3*taille_carreau, 
                                         3*taille_carreau, 2*taille_carreau };}
 
@@ -78,14 +75,13 @@ void pre_render(SDL_Renderer* pRenderer, bloc * falling_meteor){
         case J:
             // Définition de la couleur du rectangle (bleu)
             SDL_SetRenderDrawColor(pRenderer, 0, 0, 255, 255);
-            // Création du rectangle
-            SDL_Rect rectangle;
+            
             if (falling_meteor->rotation==0||falling_meteor->rotation==2){
-                SDL_Rect rectangle = { falling_meteor->x-3*taille_carreau, 
+                rectangle = { falling_meteor->x-3*taille_carreau, 
                                         falling_meteor->y-2*taille_carreau, 
                                         3*taille_carreau, 2*taille_carreau };}
             if (falling_meteor->rotation==1||falling_meteor->rotation==3){
-                SDL_Rect rectangle = { falling_meteor->x-2*taille_carreau, 
+                rectangle = { falling_meteor->x-2*taille_carreau, 
                                         falling_meteor->y-3*taille_carreau, 
                                         3*taille_carreau, 2*taille_carreau };}
 
@@ -97,14 +93,13 @@ void pre_render(SDL_Renderer* pRenderer, bloc * falling_meteor){
         case Z:
             // Définition de la couleur du rectangle (rouge)
             SDL_SetRenderDrawColor(pRenderer, 255, 0, 0, 255);
-            // Création du rectangle
-            SDL_Rect rectangle;
+            
             if (falling_meteor->rotation==0||falling_meteor->rotation==2){
-                SDL_Rect rectangle = { falling_meteor->x-3*taille_carreau, 
+                rectangle = { falling_meteor->x-3*taille_carreau, 
                                         falling_meteor->y-2*taille_carreau, 
                                         3*taille_carreau, 2*taille_carreau };}
             if (falling_meteor->rotation==1||falling_meteor->rotation==3){
-                SDL_Rect rectangle = { falling_meteor->x-2*taille_carreau, 
+                rectangle = { falling_meteor->x-2*taille_carreau, 
                                         falling_meteor->y-3*taille_carreau, 
                                         3*taille_carreau, 2*taille_carreau };}
 
@@ -116,14 +111,13 @@ void pre_render(SDL_Renderer* pRenderer, bloc * falling_meteor){
         default : //case S
             // Définition de la couleur du rectangle (vert)
             SDL_SetRenderDrawColor(pRenderer, 0, 255, 0, 255);
-            // Création du rectangle
-            SDL_Rect rectangle;
+            
             if (falling_meteor->rotation==0||falling_meteor->rotation==2){
-                SDL_Rect rectangle = { falling_meteor->x-3*taille_carreau, 
+                rectangle = { falling_meteor->x-3*taille_carreau, 
                                         falling_meteor->y-2*taille_carreau, 
                                         3*taille_carreau, 2*taille_carreau };}
             if (falling_meteor->rotation==1||falling_meteor->rotation==3){
-                SDL_Rect rectangle = { falling_meteor->x-2*taille_carreau, 
+                rectangle = { falling_meteor->x-2*taille_carreau, 
                                         falling_meteor->y-3*taille_carreau, 
                                         3*taille_carreau, 2*taille_carreau };}
 
