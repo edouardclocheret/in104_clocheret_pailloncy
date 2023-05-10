@@ -15,35 +15,40 @@
 int main(int argc, char *argv[]){
     
     
-    printf("numero1\n");
+    printf("runnning\n");
 
     //Initialisation de SDL
     initialisation();
     printf("initialisation passée\n");
     
     //Création et ouverture de la fenêtre
-    
+    printf("01\n");
     SDL_Window *window = NULL;
-    
+    printf("02\n");
     //taille de la grille de tetris : 10*20 cases de taille taille_carreau
     window = SDL_CreateWindow("SDL2", 100, 100, 10*taille_carreau, 20*taille_carreau, SDL_WINDOW_SHOWN);
+    printf("03\n");
     if(NULL == window)
     {
         fprintf(stderr, "Erreur SDL_CreateWindow : %s", SDL_GetError());
         return EXIT_FAILURE;
     }
-    
+    printf("04\n");
     //Création du rendu
     SDL_Renderer* pRenderer;
+    printf("05\n");
     pRenderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_TARGETTEXTURE);       
+    printf("06\n");
     if (pRenderer == NULL)     
     {         
         SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "[DEBUG] > %s", SDL_GetError());         
         SDL_Quit();         
         return EXIT_FAILURE;     
     }
+    printf("07\n");
     
     bloc* falling_meteor;
+    printf("08\n");
     //tirage au sort du bloc qui va apparaître :
     //int etat_tire = rand() % 7;
     int etat_tire = 1;
@@ -54,12 +59,13 @@ int main(int argc, char *argv[]){
     else if (etat_tire ==5) falling_meteor->son_nom = J;
     else if (etat_tire ==6) falling_meteor->son_nom = Z;
     else if (etat_tire ==7) falling_meteor->son_nom = S;
-    
+    printf("09\n");
     falling_meteor->x = taille_carreau*2;
     falling_meteor->x = taille_carreau*5;
     falling_meteor->rotation = 0;
-    
+    printf("10\n");
     pre_render(pRenderer);
+    printf("11\n");
     SDL_Delay(20000);
     
     /*On mettra en place la boucle de jeu plus tard
