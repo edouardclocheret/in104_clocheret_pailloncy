@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 void pre_render(SDL_Renderer** pRenderer, bloc * falling_meteor){
-    
+    printf("numero0\n");
     //On remet d'abort à zero le rendu
     SDL_RenderClear(*pRenderer);
     printf("numero1\n");
