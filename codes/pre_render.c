@@ -1,21 +1,23 @@
 
 #include <SDL2/SDL.h>
 #include "def_types_et_vars.h"
+#include <stdio.h>
 
 void pre_render(SDL_Renderer** pRenderer, bloc * falling_meteor){
     
     //On remet d'abort à zero le rendu
     SDL_RenderClear(*pRenderer);
-    
+    printf("numero1\n");
     
     
     SDL_Rect rectangle;
     SDL_Rect rectangle2;
+    printf("numero2\n");
     switch(falling_meteor->son_nom){
         case I :
             // Définition de la couleur du rectangle (turquoise)
             SDL_SetRenderDrawColor(*pRenderer, 64, 224, 208, 255);
-
+            printf("numero3\n");
             rectangle.x = falling_meteor->x;
             rectangle.y = falling_meteor->y;
             if (falling_meteor->rotation==0||falling_meteor->rotation==2){
@@ -28,10 +30,10 @@ void pre_render(SDL_Renderer** pRenderer, bloc * falling_meteor){
                 rectangle.h =4*taille_carreau;
     
             }
-
+            printf("numero4\n");
             // Affichage du rectangle
             SDL_RenderFillRect(*pRenderer, &rectangle);
-
+            printf("numero5\n");
             break;
 
         case O:
@@ -257,6 +259,7 @@ void pre_render(SDL_Renderer** pRenderer, bloc * falling_meteor){
             break;
 
     }
+printf("numero6\n");
 // Mise à jour du rendu
 SDL_RenderPresent(*pRenderer);
 
