@@ -47,23 +47,23 @@ int main(int argc, char *argv[]){
     }
     printf("07\n");
     
-    bloc* falling_meteor;
+    bloc falling_meteor;
     printf("08\n");
     //tirage au sort du bloc qui va apparaître :
     //int etat_tire = rand() % 7;
     int etat_tire = 1;
-    if (etat_tire ==1) {(*falling_meteor).son_nom = I;
+    if (etat_tire ==1) {falling_meteor.son_nom = I;
     printf("08.5\n");}
-    else if (etat_tire ==2) falling_meteor->son_nom = O;
-    else if (etat_tire ==3) falling_meteor->son_nom = T;
-    else if (etat_tire ==4) falling_meteor->son_nom = L;
-    else if (etat_tire ==5) falling_meteor->son_nom = J;
-    else if (etat_tire ==6) falling_meteor->son_nom = Z;
-    else if (etat_tire ==7) falling_meteor->son_nom = S;
+    else if (etat_tire ==2) falling_meteor.son_nom = O;
+    else if (etat_tire ==3) falling_meteor.son_nom = T;
+    else if (etat_tire ==4) falling_meteor.son_nom = L;
+    else if (etat_tire ==5) falling_meteor.son_nom = J;
+    else if (etat_tire ==6) falling_meteor.son_nom = Z;
+    else if (etat_tire ==7) falling_meteor.son_nom = S;
     printf("09\n");
-    falling_meteor->x = taille_carreau*2;
-    falling_meteor->x = taille_carreau*5;
-    falling_meteor->rotation = 0;
+    falling_meteor.x = taille_carreau*2;
+    falling_meteor.x = taille_carreau*5;
+    falling_meteor.rotation = 0;
     printf("10\n");
     pre_render(pRenderer);
     printf("11\n");
