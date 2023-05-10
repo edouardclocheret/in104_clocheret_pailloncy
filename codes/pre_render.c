@@ -94,8 +94,9 @@ void pre_render(SDL_Renderer** pRenderer, bloc * falling_meteor){
                 rectangle2.h = taille_carreau;
             }
 
-            // Affichage du rectangle
+            // Affichage des rectangles
             SDL_RenderFillRect(*pRenderer, &rectangle);
+            SDL_RenderFillRect(*pRenderer, &rectangle2);
 
             break;
 
@@ -144,8 +145,9 @@ void pre_render(SDL_Renderer** pRenderer, bloc * falling_meteor){
                 rectangle2.h = taille_carreau;
             }
 
-            // Affichage du rectangle
+            // Affichage des rectangles
             SDL_RenderFillRect(*pRenderer, &rectangle);
+            SDL_RenderFillRect(*pRenderer, &rectangle2);
 
             break;
 
@@ -193,8 +195,9 @@ void pre_render(SDL_Renderer** pRenderer, bloc * falling_meteor){
                 rectangle2.w = taille_carreau;
                 rectangle2.h = taille_carreau;
             }
-            // Affichage du rectangle
+            // Affichage des rectangles
             SDL_RenderFillRect(*pRenderer, &rectangle);
+            SDL_RenderFillRect(*pRenderer, &rectangle2);
 
             
             break;
@@ -223,8 +226,9 @@ void pre_render(SDL_Renderer** pRenderer, bloc * falling_meteor){
                 rectangle2.w = taille_carreau;
                 rectangle2.h = 2*taille_carreau;
             }
-            // Affichage du rectangle
+            // Affichage des rectangles
             SDL_RenderFillRect(*pRenderer, &rectangle);
+            SDL_RenderFillRect(*pRenderer, &rectangle2);
 
             break; 
 
@@ -253,8 +257,9 @@ void pre_render(SDL_Renderer** pRenderer, bloc * falling_meteor){
                 rectangle2.h = 2*taille_carreau;
             }
 
-            // Affichage du rectangle
+            // Affichage des rectangles
             SDL_RenderFillRect(*pRenderer, &rectangle);
+            SDL_RenderFillRect(*pRenderer, &rectangle2);
 
             break;
 
