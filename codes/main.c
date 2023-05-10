@@ -65,7 +65,7 @@ int main(int argc, char *argv[]){
     falling_meteor.x = taille_carreau*5;
     falling_meteor.rotation = 0;
     printf("10\n");
-    pre_render(pRenderer);
+    pre_render(&pRenderer,&falling_meteor);
     printf("11\n");
     SDL_Delay(20000);
     
@@ -76,7 +76,7 @@ int main(int argc, char *argv[]){
 
     while(!quit) {
 
-        pre_render(pRenderer);
+        pre_render(arguments);
 
         //entree_clavier (falling_meteor);
 
