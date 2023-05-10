@@ -15,10 +15,11 @@
 int main(int argc, char *argv[]){
     
     
-    printf("running\n");
+    printf("numero1\n");
 
     //Initialisation de SDL
     initialisation();
+    printf("initialisation passée\n");
     
     //Création et ouverture de la fenêtre
     
