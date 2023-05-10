@@ -3,6 +3,12 @@
 #include "def_types_et_vars.h"
 
 void pre_render(SDL_Renderer** pRenderer, bloc * falling_meteor){
+    
+    //On remet d'abort à zero le rendu
+    SDL_RenderClear(*pRenderer);
+    
+    
+    
     SDL_Rect rectangle;
     SDL_Rect rectangle2;
     switch(falling_meteor->son_nom){

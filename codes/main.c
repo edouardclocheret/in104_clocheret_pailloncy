@@ -22,7 +22,7 @@ int main(int argc, char *argv[]){
     
     //Création et ouverture de la fenêtre
     
-    SDL_Window *window = NULL, *window2 = NULL;
+    SDL_Window *window = NULL;
     
     //taille de la grille de tetris : 10*20 cases de taille taille_carreau
     window = SDL_CreateWindow("SDL2", 100, 100, 10*taille_carreau, 20*taille_carreau, SDL_WINDOW_SHOWN);
@@ -57,9 +57,15 @@ int main(int argc, char *argv[]){
     falling_meteor->x = taille_carreau*2;
     falling_meteor->x = taille_carreau*5;
     falling_meteor->rotation = 0;
+    
+    pre_render(pRenderer);
+    SDL_Delay(20000);
+    
+    /*On mettra en place la boucle de jeu plus tard
     //début du jeu
 
     bool quit = false;
+
     while(!quit) {
 
         pre_render(pRenderer);
@@ -74,6 +80,7 @@ int main(int argc, char *argv[]){
         // 1000 ms/ 60 fps = 1/16 s^2/frame
         SDL_Delay(16);
     }
+    */
 
 
     //SDL_RenderPresent(pRenderer);
