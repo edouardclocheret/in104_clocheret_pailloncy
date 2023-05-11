@@ -26,7 +26,8 @@ int main(int argc, char *argv[]){
     SDL_Window *window = NULL;
     printf("02\n");
     //taille de la grille de tetris : 10*20 cases de taille taille_carreau
-    window = SDL_CreateWindow("SDL2", 100, 100, 10*taille_carreau, 20*taille_carreau, SDL_WINDOW_SHOWN);
+    window = SDL_CreateWindow("Tetris", SDL_WINDOWPOS_CENTERED,
+        SDL_WINDOWPOS_CENTERED, 10*taille_carreau, 20*taille_carreau, SDL_WINDOW_SHOWN);
     printf("03\n");
     if(NULL == window)
     {
@@ -61,8 +62,8 @@ int main(int argc, char *argv[]){
     else if (etat_tire ==6) falling_meteor.son_nom = Z;
     else if (etat_tire ==7) falling_meteor.son_nom = S;
     printf("09\n");
-    falling_meteor.x = taille_carreau*2;
-    falling_meteor.x = taille_carreau*5;
+    falling_meteor.x = taille_carreau*3;
+    falling_meteor.y = 0;
     falling_meteor.rotation = 0;
     printf("10\n");
     pre_render(&pRenderer,&falling_meteor);
