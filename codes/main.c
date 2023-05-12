@@ -75,6 +75,13 @@ bool collision(bloc* falling_meteor, int** matrice){
     ////////////////////////////////////////
     if(y1==19||y2==19||y3==19||y4==19||matrice[y1+1][x1]!=0 ||matrice[y2+1][x2]!=0||matrice[y3+1][x3]!=0||matrice[y4+1][x4]!=0){
         //modifier en plus la matrice en ajoutant la couleur
+        if (falling_meteor->son_nom=I){
+            matrice[y1][x1]=1;
+            matrice[y2][x2]=1;
+            matrice[y3][x3]=1;
+            matrice[y4][x4]=1;
+            }
+        
         return true;
     }
     return false;
@@ -142,7 +149,7 @@ int main(int argc, char *argv[]){
     //cette matrice représente les blocs déjà tombés
     int** matrice = create_matrix(20,10);
     //pour le test de collision !
-    matrice [4][3] = 1;
+    matrice [4][3] = 2;
     printf("Bloc en psoition 3,3 est %d\n", matrice[4][3]);
     pre_render(&pRenderer,&falling_meteor, matrice);
     SDL_Delay(1000);
@@ -154,6 +161,7 @@ int main(int argc, char *argv[]){
         falling_meteor.y=falling_meteor.y+going_down;
         printf("position du bloc : %d , %d\n",falling_meteor.x, falling_meteor.y);
     }
+    SDL_Delay(1000);
     printf("11\n");
     /*On mettra en place la boucle de jeu plus tard
     //début du jeu

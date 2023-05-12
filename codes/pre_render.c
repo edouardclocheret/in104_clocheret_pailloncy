@@ -15,7 +15,7 @@ void draw_matrix(SDL_Renderer** pRenderer,int** matrice){
                 SDL_SetRenderDrawColor(*pRenderer, 64, 224, 208, 255);
                 }
                 if (matrice[i][j]==2){
-                SDL_SetRenderDrawColor(*pRenderer, 64, 224, 208, 255);
+                SDL_SetRenderDrawColor(*pRenderer, 255, 255, 0, 255);
                 }
                 if (matrice[i][j]==3){
                 SDL_SetRenderDrawColor(*pRenderer, 64, 224, 208, 255);
