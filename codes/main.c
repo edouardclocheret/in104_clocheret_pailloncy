@@ -149,7 +149,7 @@ int main(int argc, char *argv[]){
     while(collision(&falling_meteor, &matrice)==0){
         printf("boucle\n");
         pre_render(&pRenderer,&falling_meteor);
-        SDL_Delay(16);
+        SDL_Delay(1000);
         falling_meteor.y=falling_meteor.y+going_down;
     }
     printf("11\n");
@@ -176,7 +176,6 @@ int main(int argc, char *argv[]){
 
 
     //SDL_RenderPresent(pRenderer);
-    SDL_DestroyWindow(window);
 
     if(NULL != pRenderer) SDL_DestroyRenderer(pRenderer);
     if(NULL != window) SDL_DestroyWindow(window);
