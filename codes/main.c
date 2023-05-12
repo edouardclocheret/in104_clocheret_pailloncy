@@ -60,7 +60,7 @@ bool collision(bloc* falling_meteor, int** matrice){
                 x2 = x1;
                 x3 = x2;
                 x4 = x3;
-                y1 = floor(falling_meteor->y%taille_carreau);
+                y1 = falling_meteor->y%taille_carreau;
                 y2 = y1+1;
                 y3 = y2+1;
                 y4 = y3+1;
@@ -73,7 +73,7 @@ bool collision(bloc* falling_meteor, int** matrice){
     ////////////////////////////////////////
     //          test de collision         //
     ////////////////////////////////////////
-    if(y1==19||y2==19||y3==19||y4==19||matrice[x1][y1+1]!=0 ||matrice[x2][y2+1]!=0||matrice[x3][y3+1]!=0||matrice[x4][y4+1]!=0){
+    if(y1==19||y2==19||y3==19||y4==19||matrice[y1+1][x1]!=0 ||matrice[y2+1][x2]!=0||matrice[y3+1][x3]!=0||matrice[y4+1][x4]!=0){
         //modifier en plus la matrice en ajoutant la couleur
         return true;
     }
