@@ -150,7 +150,7 @@ int main(int argc, char *argv[]){
     int** matrice = create_matrix(20,10);
     //pour le test de collision !
     matrice [4][3] = 2;
-    printf("Bloc en position 3,3 est %d\n", matrice[4][3]);
+    printf("Bloc en position 3,3 est %d comme couleur\n", matrice[4][3]);
     SDL_Delay(1000);
 
 
