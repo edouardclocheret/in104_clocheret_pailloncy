@@ -73,7 +73,7 @@ bool collision(bloc* falling_meteor, int** matrice){
     ////////////////////////////////////////
     //          test de collision         //
     ////////////////////////////////////////
-    if(y1==19||y2==19||y3==19||y4==19||matrice[x1][y1+1]!=0 ||matrice[x2][y2+1]!=0||matrice[x3][y3+1]!=0||matrice[x4][y4+1]!=0){
+    if(y1==19||y2==19||y3==19||y4==19||matrice[y1+1][x1]!=0 ||matrice[y2+1][x2]!=0||matrice[y3+1][x3]!=0||matrice[y4+1][x4]!=0){
         //modifier en plus la matrice en ajoutant la couleur
         return true;
     }
@@ -140,9 +140,8 @@ int main(int argc, char *argv[]){
     printf("10\n");
     printf("position du bloc : %d , %d\n",falling_meteor.x, falling_meteor.y);
     //cette matrice représente les blocs déjà tombés
-    int** matrice = create_matrix(20,10);
+    int** matrice = create_matrix(10,20);
     //pour le test de collision !
-    matrice [5][5] = 1;
     matrice [4][3] = 1;
     printf("Bloc en psoition 3,3 est %d\n", matrice[4][3]);
     pre_render(&pRenderer,&falling_meteor);
@@ -151,7 +150,7 @@ int main(int argc, char *argv[]){
     while(collision(&falling_meteor, matrice)==0){
         printf("boucle\n");
         pre_render(&pRenderer,&falling_meteor);
-        SDL_Delay(500);
+        SDL_Delay(250);
         falling_meteor.y=falling_meteor.y+going_down;
         printf("position du bloc : %d , %d\n",falling_meteor.x, falling_meteor.y);
     }
@@ -187,10 +186,10 @@ int main(int argc, char *argv[]){
 
 
     // Libération de la mémoire allouée pour la matrice
-    for (int i = 0; i < 20; i++) {
+    /*for (int i = 0; i < ?; i++) {
         free(matrice[i]);
     }
-    free(matrice);
+    free(matrice);*/
 
     return EXIT_SUCCESS;
 }
