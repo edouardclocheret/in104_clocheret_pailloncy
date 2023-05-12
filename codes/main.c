@@ -3,7 +3,6 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-#include "def_types_et_vars.h"
 #include "down.h"
 #include "entree_clavier.h"
 #include "initialisation.h"
@@ -71,7 +70,7 @@ bool collision(bloc* falling_meteor, int** matrice){
     ////////////////////////////////////////
     //          test de collision         //
     ////////////////////////////////////////
-    if(y1==19||y2==19||y3==19||y4=19){
+    if(y1==19||y2==19||y3==19||y4==19){
         //modifier en plus la matrice en ajoutant la couleur
         return true;
     }
@@ -146,7 +145,7 @@ int main(int argc, char *argv[]){
     
     //cette matrice représente les blocs déjà tombés
     int** matrice = create_matrix(20,10);
-    printf("Bloc en psoition 1,3%d\n", matrice[1][3]);
+    printf("Bloc en psoition 1,3 est %d\n", matrice[1][3]);
 
     //if collision(*bloc falling_meteor, int** matrice);
     
