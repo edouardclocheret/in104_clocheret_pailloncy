@@ -150,9 +150,10 @@ int main(int argc, char *argv[]){
     int** matrice = create_matrix(20,10);
     //pour le test de collision !
     matrice [4][3] = 2;
-    printf("Bloc en psoition 3,3 est %d\n", matrice[4][3]);
+    printf("Bloc en position 3,3 est %d\n", matrice[4][3]);
     SDL_Delay(1000);
-    
+
+
     pre_render(&pRenderer,&falling_meteor, matrice);
     while(collision(&falling_meteor, matrice)==0){
         printf("boucle\n");
