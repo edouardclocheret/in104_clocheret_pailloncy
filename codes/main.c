@@ -29,6 +29,10 @@ int** create_matrix (int lignes, int colonnes){
 }
 
 bool collision(bloc* falling_meteor, int** matrice){
+    ///////////////////////////////
+    //    traduction             //
+    ///////////////////////////////
+
     //traduire le bloc en ses 4 coordonnées des cases occupées
     //arrondies à la case du dessus (si le bloc occupe que la moitié de la case, il n'y a pas encore collision)
     int x1; int y1;
@@ -43,6 +47,8 @@ bool collision(bloc* falling_meteor, int** matrice){
                 x2 = x1+1;
                 x3 = x2+1;
                 x4 = x3+1;
+                //on prend la partie entière parce qu'il n'y a pas de collision
+                // si on occupe une demie- case
                 y1 = floor(falling_meteor->y%taille_carreau);
                 y2 = y1;
                 y3 = y1;
@@ -60,8 +66,11 @@ bool collision(bloc* falling_meteor, int** matrice){
             }
         break;
 
+
     }
-    //test de collision : 
+    ////////////////////////////////////////
+    //          test de collision         //
+    ////////////////////////////////////////
     if(y1==19||y2==19||y3==19||y4=19){
         //modifier en plus la matrice en ajoutant la couleur
         return true;
@@ -72,6 +81,8 @@ bool collision(bloc* falling_meteor, int** matrice){
     }
     else return false;
 }
+
+
 
 //the falling bloc will be labeled "falling_meteor"
 
