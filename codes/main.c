@@ -141,17 +141,21 @@ int main(int argc, char *argv[]){
     falling_meteor.y = 0;
     falling_meteor.rotation = 0;
     printf("10\n");
-    
+    printf("position du bloc : %d , %d\n",falling_meteor.x, falling_meteor.y);
     //cette matrice représente les blocs déjà tombés
     int** matrice = create_matrix(20,10);
     printf("Bloc en psoition 1,3 est %d\n", matrice[1][3]);
     pre_render(&pRenderer,&falling_meteor);
     SDL_Delay(3000);
+    falling_meteor.y=falling_meteor.y+going_down;
+    pre_render(&pRenderer,&falling_meteor);
+    
     while(collision(&falling_meteor, &matrice)!=0){
         printf("boucle\n");
         pre_render(&pRenderer,&falling_meteor);
-        SDL_Delay(1000);
+        SDL_Delay(500);
         falling_meteor.y=falling_meteor.y+going_down;
+        printf("position du bloc : %d , %d\n",falling_meteor.x, falling_meteor.y);
     }
     printf("11\n");
     /*On mettra en place la boucle de jeu plus tard

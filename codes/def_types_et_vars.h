@@ -1,6 +1,7 @@
 
 #define taille_carreau 50
 #define going_down 10
+//Il faut nécessairement taille carreau multiple de going_down 
 
 //A name is given to each tetris bloc
 enum shape {I, O, T, L, J, Z, S};
