@@ -10,6 +10,7 @@ void draw_matrix(SDL_Renderer** pRenderer,int** matrice){
         for (int j = 0; j < 10; j++) {
             if (matrice[i][j]!=0){
                 SDL_Rect carreau = {j*taille_carreau, i*taille_carreau, taille_carreau, taille_carreau};
+                
                 if (matrice[i][j]==1){
                 SDL_SetRenderDrawColor(*pRenderer, 64, 224, 208, 255);
                 }
