@@ -151,7 +151,6 @@ int main(int argc, char *argv[]){
     //pour le test de collision !
     matrice [4][3] = 2;
     printf("Bloc en psoition 3,3 est %d\n", matrice[4][3]);
-    pre_render(&pRenderer,&falling_meteor, matrice);
     SDL_Delay(1000);
 
     while(collision(&falling_meteor, matrice)==0){

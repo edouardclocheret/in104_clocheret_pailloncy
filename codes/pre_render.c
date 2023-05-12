@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void draw_matrix(SDL_Renderer** pRenderer,int** matrice){
+void draw_matrix(SDL_Renderer** pRenderer,int** matrice, bloc* falling_meteor){
     
     for (int i = 0; i < 20; i++) {
         for (int j = 0; j < 10; j++) {
@@ -30,6 +30,7 @@ void draw_matrix(SDL_Renderer** pRenderer,int** matrice){
                 SDL_SetRenderDrawColor(*pRenderer, 64, 224, 208, 255);
                 }
 
+            falling_meteor->y=falling_meteor->y+going_down;
             SDL_RenderFillRect(*pRenderer, &carreau);
             }
         }
