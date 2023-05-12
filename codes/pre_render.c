@@ -304,7 +304,7 @@ void pre_render(SDL_Renderer** pRenderer, bloc * falling_meteor, int** matrice){
 printf("numero6\n");
 
 //dessin des blocs déjà tombés
-draw_matrix(pRenderer,matrice);
+draw_matrix(pRenderer,matrice, falling_meteor);
 
 // Mise à jour du rendu
 SDL_RenderPresent(*pRenderer);
