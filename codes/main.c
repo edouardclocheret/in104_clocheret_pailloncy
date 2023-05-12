@@ -27,12 +27,12 @@ int** create_matrix (int lignes, int colonnes){
     return matrice;
 }
 
-bool collision(bloc* falling_meteor, int** matrice){
+bool collision(bloc* falling_meteor, int*** matrice){
     ///////////////////////////////
     //    traduction             //
     ///////////////////////////////
 
-    //traduire le bloc en ses 4 coordonnées des cases occupées
+    //ie traduire le bloc en ses 4 coordonnées des cases occupées
     //arrondies à la case du dessus (si le bloc occupe que la moitié de la case, il n'y a pas encore collision)
     int x1; int y1;
     int x2; int y2;
@@ -41,7 +41,9 @@ bool collision(bloc* falling_meteor, int** matrice){
 
     switch (falling_meteor->son_nom){
         case I :
+            printf("on est dans case I\n");
             if (falling_meteor->rotation ==0||falling_meteor->rotation ==2){
+                printf("et rotation paire\n");
                 x1 = falling_meteor->x%taille_carreau;
                 x2 = x1+1;
                 x3 = x2+1;
@@ -78,7 +80,7 @@ bool collision(bloc* falling_meteor, int** matrice){
         //modifier en plus la matrice en ajoutant la couleur
         return true;
     }
-    else return false;
+    return false;
 }
 
 
@@ -139,17 +141,18 @@ int main(int argc, char *argv[]){
     falling_meteor.y = 0;
     falling_meteor.rotation = 0;
     printf("10\n");
-    pre_render(&pRenderer,&falling_meteor);
-    printf("11\n");
-    SDL_Delay(20000);
     
     //cette matrice représente les blocs déjà tombés
     int** matrice = create_matrix(20,10);
     printf("Bloc en psoition 1,3 est %d\n", matrice[1][3]);
 
-    //if collision(*bloc falling_meteor, int** matrice);
-    
-    
+    while(collision(&falling_meteor, &matrice)==0){
+        printf("boucle\n");
+        pre_render(&pRenderer,&falling_meteor);
+        SDL_Delay(16);
+        falling_meteor.y=falling_meteor.y+going_down;
+    }
+    printf("11\n");
     /*On mettra en place la boucle de jeu plus tard
     //début du jeu
 
