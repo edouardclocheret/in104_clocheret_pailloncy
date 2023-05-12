@@ -6,6 +6,7 @@
 void pre_render(SDL_Renderer** pRenderer, bloc * falling_meteor){
     printf("numero0\n");
     //On remet d'abort à zero le rendu
+    SDL_SetRenderDrawColor(*pRenderer, 0, 0, 0, 255);
     SDL_RenderClear(*pRenderer);
     printf("numero1\n");
     
