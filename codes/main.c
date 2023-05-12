@@ -161,6 +161,9 @@ int main(int argc, char *argv[]){
         
         printf("position du bloc : %d , %d\n",falling_meteor.x, falling_meteor.y);
     }
+    falling_meteor.y=falling_meteor.y+going_down;
+    pre_render(&pRenderer,&falling_meteor, matrice);
+    
     SDL_Delay(1000);
     printf("11\n");
     /*On mettra en place la boucle de jeu plus tard
