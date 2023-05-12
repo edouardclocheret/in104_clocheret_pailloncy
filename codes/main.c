@@ -152,12 +152,13 @@ int main(int argc, char *argv[]){
     matrice [4][3] = 2;
     printf("Bloc en psoition 3,3 est %d\n", matrice[4][3]);
     SDL_Delay(1000);
-
+    pre_render(&pRenderer,&falling_meteor, matrice);
     while(collision(&falling_meteor, matrice)==0){
         printf("boucle\n");
+        falling_meteor.y=falling_meteor.y+going_down;
         pre_render(&pRenderer,&falling_meteor, matrice);
         SDL_Delay(250);
-        falling_meteor.y=falling_meteor.y+going_down;
+        
         printf("position du bloc : %d , %d\n",falling_meteor.x, falling_meteor.y);
     }
     SDL_Delay(1000);

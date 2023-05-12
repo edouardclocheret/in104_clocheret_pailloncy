@@ -9,8 +9,10 @@ void draw_matrix(SDL_Renderer** pRenderer,int** matrice, bloc* falling_meteor){
     for (int i = 0; i < 20; i++) {
         for (int j = 0; j < 10; j++) {
             if (matrice[i][j]!=0){
-                SDL_Rect carreau = {j*taille_carreau, i*taille_carreau, taille_carreau, taille_carreau};
+                //il faut descendre une fois de plus
+                falling_meteor->y=falling_meteor->y+going_down;
                 
+                SDL_Rect carreau = {j*taille_carreau, i*taille_carreau, taille_carreau, taille_carreau};
                 if (matrice[i][j]==1){
                 SDL_SetRenderDrawColor(*pRenderer, 64, 224, 208, 255);
                 }
@@ -30,7 +32,7 @@ void draw_matrix(SDL_Renderer** pRenderer,int** matrice, bloc* falling_meteor){
                 SDL_SetRenderDrawColor(*pRenderer, 64, 224, 208, 255);
                 }
 
-            falling_meteor->y=falling_meteor->y+going_down;
+            
             SDL_RenderFillRect(*pRenderer, &carreau);
             }
         }
