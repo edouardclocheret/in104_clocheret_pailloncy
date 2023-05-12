@@ -28,7 +28,7 @@ int** create_matrix (int lignes, int colonnes){
     return matrice;
 }
 
-bool collision(*bloc falling_meteor, int** matrice){
+bool collision(bloc* falling_meteor, int** matrice){
     //traduire le bloc en ses 4 coordonnées des cases occupées
     //arrondies à la case du dessus (si le bloc occupe que la moitié de la case, il n'y a pas encore collision)
     int x1; int y1;
@@ -36,6 +36,31 @@ bool collision(*bloc falling_meteor, int** matrice){
     int x3; int y3;
     int x4; int y4;
 
+    switch (falling_meteor->son_nom){
+        case I :
+            if (falling_meteor->rotation ==0||falling_meteor->rotation ==2){
+                x1 = falling_meteor->x%taille_carreau;
+                x2 = x1+1;
+                x3 = x2+1;
+                x4 = x3+1;
+                y1 = floor(falling_meteor->y%taille_carreau);
+                y2 = y1;
+                y3 = y1;
+                y4 = y1;
+            }
+            else if (falling_meteor->rotation ==1||falling_meteor->rotation ==3){
+                x1 = falling_meteor->x%taille_carreau;
+                x2 = x1;
+                x3 = x2;
+                x4 = x3;
+                y1 = floor(falling_meteor->y%taille_carreau);
+                y2 = y1+1;
+                y3 = y2+1;
+                y4 = y3+1;
+            }
+        break;
+
+    }
     //test de collision : 
     if(y1==19||y2==19||y3==19||y4=19){
         //modifier en plus la matrice en ajoutant la couleur
