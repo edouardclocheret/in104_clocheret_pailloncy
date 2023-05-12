@@ -146,11 +146,11 @@ int main(int argc, char *argv[]){
     int** matrice = create_matrix(20,10);
     printf("Bloc en psoition 1,3 est %d\n", matrice[1][3]);
     pre_render(&pRenderer,&falling_meteor);
-    SDL_Delay(5000);
-    while(collision(&falling_meteor, &matrice)==0){
+    SDL_Delay(3000);
+    while(collision(&falling_meteor, &matrice)!=0){
         printf("boucle\n");
         pre_render(&pRenderer,&falling_meteor);
-        SDL_Delay(1000);
+        SDL_Delay(16);
         falling_meteor.y=falling_meteor.y+going_down;
     }
     printf("11\n");
