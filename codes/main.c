@@ -27,7 +27,7 @@ int** create_matrix (int lignes, int colonnes){
     return matrice;
 }
 
-bool collision(bloc* falling_meteor, int*** matrice){
+bool collision(bloc* falling_meteor, int** matrice){
     ///////////////////////////////
     //    traduction             //
     ///////////////////////////////
@@ -44,13 +44,13 @@ bool collision(bloc* falling_meteor, int*** matrice){
             printf("on est dans case I\n");
             if (falling_meteor->rotation ==0||falling_meteor->rotation ==2){
                 printf("et rotation paire\n");
-                x1 = falling_meteor->x%taille_carreau;
+                x1 = falling_meteor->x/taille_carreau;
                 x2 = x1+1;
                 x3 = x2+1;
                 x4 = x3+1;
                 //on prend la partie entière parce qu'il n'y a pas de collision
                 // si on occupe une demie- case
-                y1 = floor(falling_meteor->y%taille_carreau);
+                y1 = falling_meteor->y/taille_carreau;
                 y2 = y1;
                 y3 = y1;
                 y4 = y1;
@@ -65,6 +65,7 @@ bool collision(bloc* falling_meteor, int*** matrice){
                 y3 = y2+1;
                 y4 = y3+1;
             }
+        printf("%d,%d %d,%d %d,%d %d,%d\n", x1,y1,x2,y2,x3,y3,x4,y4);
         break;
 
 
@@ -141,13 +142,13 @@ int main(int argc, char *argv[]){
     //cette matrice représente les blocs déjà tombés
     int** matrice = create_matrix(20,10);
     //pour le test de collision !
-    matrice [4][3] = 1;
+    matrice [5][5] = 1;
     matrice [4][3] = 1;
     printf("Bloc en psoition 3,3 est %d\n", matrice[4][3]);
     pre_render(&pRenderer,&falling_meteor);
     SDL_Delay(1000);
 
-    while(collision(&falling_meteor, &matrice)!=0){
+    while(collision(&falling_meteor, matrice)==0){
         printf("boucle\n");
         pre_render(&pRenderer,&falling_meteor);
         SDL_Delay(500);
