@@ -145,7 +145,7 @@ int main(int argc, char *argv[]){
     //cette matrice représente les blocs déjà tombés
     int** matrice = create_matrix(20,10);
     //pour le test de collision !
-    //matrice [4][3] = 1;
+    matrice [4][3] = 1;
     printf("Bloc en psoition 3,3 est %d\n", matrice[4][3]);
     pre_render(&pRenderer,&falling_meteor);
     SDL_Delay(1000);
