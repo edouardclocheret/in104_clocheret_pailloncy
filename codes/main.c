@@ -140,7 +140,7 @@ int main(int argc, char *argv[]){
     printf("10\n");
     printf("position du bloc : %d , %d\n",falling_meteor.x, falling_meteor.y);
     //cette matrice représente les blocs déjà tombés
-    int** matrice = create_matrix(10,20);
+    int** matrice = create_matrix(20,10);
     //pour le test de collision !
     matrice [4][3] = 1;
     printf("Bloc en psoition 3,3 est %d\n", matrice[4][3]);
