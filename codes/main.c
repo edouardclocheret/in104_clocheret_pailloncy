@@ -152,6 +152,7 @@ int main(int argc, char *argv[]){
     matrice [4][3] = 2;
     printf("Bloc en psoition 3,3 est %d\n", matrice[4][3]);
     SDL_Delay(1000);
+    
     pre_render(&pRenderer,&falling_meteor, matrice);
     while(collision(&falling_meteor, matrice)==0){
         printf("boucle\n");
@@ -163,7 +164,7 @@ int main(int argc, char *argv[]){
     }
     falling_meteor.y=falling_meteor.y+going_down;
     pre_render(&pRenderer,&falling_meteor, matrice);
-    
+
     SDL_Delay(1000);
     printf("11\n");
     /*On mettra en place la boucle de jeu plus tard
