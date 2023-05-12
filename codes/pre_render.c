@@ -2,8 +2,42 @@
 #include <SDL2/SDL.h>
 #include "def_types_et_vars.h"
 #include <stdio.h>
+#include <stdlib.h>
 
-void pre_render(SDL_Renderer** pRenderer, bloc * falling_meteor){
+void draw_matrix(SDL_Renderer** pRenderer,int** matrice){
+    
+    for (int i = 0; i < 20; i++) {
+        for (int j = 0; j < 10; j++) {
+            if (matrice[i][j]!=0){
+                SDL_Rect carreau = {j, i, taille_carreau, taille_carreau};
+                if (matrice[i][j]==1){
+                SDL_SetRenderDrawColor(*pRenderer, 64, 224, 208, 255);
+                }
+                if (matrice[i][j]==2){
+                SDL_SetRenderDrawColor(*pRenderer, 64, 224, 208, 255);
+                }
+                if (matrice[i][j]==3){
+                SDL_SetRenderDrawColor(*pRenderer, 64, 224, 208, 255);
+                } //METTRE LES BONNES COULEURS
+                if (matrice[i][j]==4){
+                SDL_SetRenderDrawColor(*pRenderer, 64, 224, 208, 255);
+                }
+                if (matrice[i][j]==5){
+                SDL_SetRenderDrawColor(*pRenderer, 64, 224, 208, 255);
+                }
+                if (matrice[i][j]==6){
+                SDL_SetRenderDrawColor(*pRenderer, 64, 224, 208, 255);
+                }
+
+            SDL_RenderFillRect(*pRenderer, &carreau);
+            }
+        }
+    }
+    
+}
+
+
+void pre_render(SDL_Renderer** pRenderer, bloc * falling_meteor, int** matrice){
     printf("remise à zero du rendu\n");
     //On remet d'abort à zero le rendu
     SDL_SetRenderDrawColor(*pRenderer, 0, 0, 0, 255); //noir
@@ -266,6 +300,10 @@ void pre_render(SDL_Renderer** pRenderer, bloc * falling_meteor){
 
     }
 printf("numero6\n");
+
+//dessin des blocs déjà tombés
+draw_matrix(pRenderer,matrice);
+
 // Mise à jour du rendu
 SDL_RenderPresent(*pRenderer);
 
