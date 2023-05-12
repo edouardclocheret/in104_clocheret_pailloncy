@@ -72,11 +72,7 @@ bool collision(bloc* falling_meteor, int*** matrice){
     ////////////////////////////////////////
     //          test de collision         //
     ////////////////////////////////////////
-    if(y1==19||y2==19||y3==19||y4==19){
-        //modifier en plus la matrice en ajoutant la couleur
-        return true;
-    }
-    else if (matrice[x1][y1+1]!=0 ||matrice[x2][y2+1]!=0||matrice[x3][y3+1]!=0||matrice[x4][y4+1]!=0){
+    if(y1==19||y2==19||y3==19||y4==19||matrice[x1][y1+1]!=0 ||matrice[x2][y2+1]!=0||matrice[x3][y3+1]!=0||matrice[x4][y4+1]!=0){
         //modifier en plus la matrice en ajoutant la couleur
         return true;
     }
@@ -145,6 +141,7 @@ int main(int argc, char *argv[]){
     //cette matrice représente les blocs déjà tombés
     int** matrice = create_matrix(20,10);
     //pour le test de collision !
+    matrice [4][3] = 1;
     matrice [4][3] = 1;
     printf("Bloc en psoition 3,3 est %d\n", matrice[4][3]);
     pre_render(&pRenderer,&falling_meteor);
