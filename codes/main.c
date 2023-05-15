@@ -71,16 +71,17 @@ int main(int argc, char *argv[]){
     int** matrice = create_matrix(20,10);
     
     //pour le test de collision !
-    matrice [4][3] = 2;
-    matrice [10][5] = 2;
+    matrice [17][3] = 5;
+    matrice [17][5] = 6;
+    matrice [17][6] = 3;
 
 
     while(!quit){
         
         //tirage d'un bloc
         //tirage au sort du bloc qui va apparaître :
-        //int etat_tire = rand() % 7;
-        int etat_tire = 1;
+        int etat_tire = rand() % 7;
+        //int etat_tire = 1;
         if (etat_tire ==1) {falling_meteor.son_nom = I;
         printf("08.5\n");}
         else if (etat_tire ==2) falling_meteor.son_nom = O;
