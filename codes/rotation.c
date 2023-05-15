@@ -5,13 +5,14 @@
 
 void rotation (int sens, bloc* falling_meteor){
     //on met à jour les coordonnées du coin en haut à gauche (avant le nombre de rotations)
-
+    /*
     switch(falling_meteor->son_nom){
     case I:
         if (sens == -1){
             if (falling_meteor->rotation==0||falling_meteor->rotation==2){
                 falling_meteor->x=falling_meteor->x+1;
                 falling_meteor->y=falling_meteor->y-1;
+                
             }
             if (falling_meteor->rotation==1||falling_meteor->rotation==3){
                 falling_meteor->x=falling_meteor->x-1;
@@ -35,6 +36,9 @@ void rotation (int sens, bloc* falling_meteor){
 
         //revoir à partir de là
 
+    case O:
+        //do nothing
+    break;
     case T:
         if (sens == -1){
             if (falling_meteor->rotation==0){
@@ -42,36 +46,31 @@ void rotation (int sens, bloc* falling_meteor){
                 falling_meteor->y=falling_meteor->y-1;
             }
             if (falling_meteor->rotation==1){
-                falling_meteor->y=falling_meteor->y-1;
+                falling_meteor->y=falling_meteor->y+1;
             }
             // if falling_meteor->rotation==2 do nothing
             // if falling_meteor->rotation==3 do nothing
         }
-            
-
         if (sens == 1){
-            if (falling_meteor->rotation==0||falling_meteor->rotation==2){
-                falling_meteor->x=falling_meteor->x+2;
+            if (falling_meteor->rotation==0){
+                falling_meteor->x=falling_meteor->x+1;
                 falling_meteor->y=falling_meteor->y-1;
             }
-            if (falling_meteor->rotation==1||falling_meteor->rotation==3){
-                falling_meteor->x=falling_meteor->x-2;
+            if (falling_meteor->rotation==1){
                 falling_meteor->y=falling_meteor->y+1;
             }
+            // if falling_meteor->rotation==2 do nothing
+            // if falling_meteor->rotation==3 do nothing
         }
     break;
+
+    
     default : //rotation du O, la plus simple
     break;
-}
-    //on met à jour le nombre de rotation du bloc
-    if (sens == -1){
-        falling_meteor->rotation=(falling_meteor->rotation-1)%4;
-    }
-    if (sens == 1){
-        falling_meteor->rotation=(falling_meteor->rotation+1)%4;
-    }
-    
+}*/
 
+    //on met à jour le nombre de rotation du bloc
+    falling_meteor->rotation=(falling_meteor->rotation+sens)%4;
 
 }
 
