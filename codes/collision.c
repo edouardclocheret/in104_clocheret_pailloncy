@@ -286,50 +286,43 @@ bool collision(bloc* falling_meteor, int** matrice){
             break;
 
             case O:
-            matrice[y1][x1]=1;
-            matrice[y2][x2]=1;
-            matrice[y3][x3]=1;
-            matrice[y4][x4]=1;
+            matrice[y1][x1]=2;
+            matrice[y2][x2]=2;
+            matrice[y3][x3]=2;
+            matrice[y4][x4]=2;
+            break;
+            case T:
+            matrice[y1][x1]=3;
+            matrice[y2][x2]=3;
+            matrice[y3][x3]=3;
+            matrice[y4][x4]=3;
+            break;
+            case L:
+            matrice[y1][x1]=4;
+            matrice[y2][x2]=4;
+            matrice[y3][x3]=4;
+            matrice[y4][x4]=4;
+            break;
+            case J:
+            matrice[y1][x1]=5;
+            matrice[y2][x2]=5;
+            matrice[y3][x3]=5;
+            matrice[y4][x4]=5;
+            break;
+            case Z:
+            matrice[y1][x1]=6;
+            matrice[y2][x2]=6;
+            matrice[y3][x3]=6;
+            matrice[y4][x4]=6;
+            break;
+            case S:
+            matrice[y1][x1]=7;
+            matrice[y2][x2]=7;
+            matrice[y3][x3]=7;
+            matrice[y4][x4]=7;
             break;
 
-            case O:
-        matrice[y1][x1]=2;
-        matrice[y2][x2]=2;
-        matrice[y3][x3]=2;
-        matrice[y4][x4]=2;
-        break;
-        case T:
-        matrice[y1][x1]=3;
-        matrice[y2][x2]=3;
-        matrice[y3][x3]=3;
-        matrice[y4][x4]=3;
-        break;
-        case L:
-        matrice[y1][x1]=4;
-        matrice[y2][x2]=4;
-        matrice[y3][x3]=4;
-        matrice[y4][x4]=4;
-        break;
-        case J:
-        matrice[y1][x1]=5;
-        matrice[y2][x2]=5;
-        matrice[y3][x3]=5;
-        matrice[y4][x4]=5;
-        break;
-        case Z:
-        matrice[y1][x1]=6;
-        matrice[y2][x2]=6;
-        matrice[y3][x3]=6;
-        matrice[y4][x4]=6;
-        break;
-        case S:
-        matrice[y1][x1]=7;
-        matrice[y2][x2]=7;
-        matrice[y3][x3]=7;
-        matrice[y4][x4]=7;
-        break;
-
-        }
+            }
 
         //dire qu'il y a eu collision
         return true;
