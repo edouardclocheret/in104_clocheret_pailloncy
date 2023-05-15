@@ -75,8 +75,15 @@ int main(int argc, char *argv[]){
     matrice [17][5] = 6;
     matrice [17][6] = 3;
 
+    bool game_over(int ** matice){
+        if ((matrice[3][0]!=0)&&(matrice[3][1]!=0)&&(matrice[3][2]!=0)&&(matrice[3][3]!=0)&&(matrice[3][4]!=0)
+        &&(matrice[3][5]!=0)&&(matrice[3][6]!=0)&&(matrice[3][7]!=0)&&(matrice[3][8]!=0)&&(matrice[3][9]!=0)){
+            return true;
+        }
+        return false;
+    }
 
-    while(!quit){
+    while((!quit) && (!game_over(matrice))){
         
         //tirage d'un bloc
         //tirage au sort du bloc qui va apparaître :
