@@ -65,20 +65,44 @@ bool collision(bloc* falling_meteor, int** matrice){
         printf("%d,%d %d,%d %d,%d %d,%d\n", x1,y1,x2,y2,x3,y3,x4,y4);
         break;
 
+        //faire les cas I, O, T, L, J, Z, S
+
+        case O : 
+
+        break;
+
 
     }
+
+
     ////////////////////////////////////////
     //          test de collision         //
     ////////////////////////////////////////
     if(y1==19||y2==19||y3==19||y4==19||matrice[y1+1][x1]!=0 ||matrice[y2+1][x2]!=0||matrice[y3+1][x3]!=0||matrice[y4+1][x4]!=0){
-        //modifier en plus la matrice en ajoutant la couleur
-        if (falling_meteor->son_nom=I){
+        
+        
+        //Dans le cas de collision, on arrêt le bloc où il est 
+        //et on clorie le fond avec la bonne couleur
+        
+        switch (falling_meteor->son_nom){
+            case I:
             matrice[y1][x1]=1;
             matrice[y2][x2]=1;
             matrice[y3][x3]=1;
             matrice[y4][x4]=1;
-            }
-        
+            break;
+
+            case O:
+            matrice[y1][x1]=1;
+            matrice[y2][x2]=1;
+            matrice[y3][x3]=1;
+            matrice[y4][x4]=1;
+            break;
+
+            //faire les cas I, O, T, L, J, Z, S
+        }
+
+        //dire qu'il y a eu collision
         return true;
     }
     return false;
