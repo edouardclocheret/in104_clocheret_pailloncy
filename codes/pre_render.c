@@ -18,16 +18,16 @@ void draw_matrix(SDL_Renderer** pRenderer,int** matrice, bloc* falling_meteor){
                 SDL_SetRenderDrawColor(*pRenderer, 255, 255, 0, 255);
                 }
                 if (matrice[i][j]==3){
-                SDL_SetRenderDrawColor(*pRenderer, 64, 224, 208, 255);
+                SDL_SetRenderDrawColor(*pRenderer, 127, 0, 255, 255);
                 } //METTRE LES BONNES COULEURS
                 if (matrice[i][j]==4){
-                SDL_SetRenderDrawColor(*pRenderer, 64, 224, 208, 255);
+                SDL_SetRenderDrawColor(*pRenderer, 255, 128, 0, 255);
                 }
                 if (matrice[i][j]==5){
-                SDL_SetRenderDrawColor(*pRenderer, 64, 224, 208, 255);
+                SDL_SetRenderDrawColor(*pRenderer, 255, 0, 0, 255);
                 }
                 if (matrice[i][j]==6){
-                SDL_SetRenderDrawColor(*pRenderer, 64, 224, 208, 255);
+                SDL_SetRenderDrawColor(*pRenderer, 0, 255, 0, 255);
                 }
 
             
