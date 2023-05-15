@@ -21,7 +21,7 @@ void entree_clavier (bloc* falling_meteor, SDL_Event* event, bool* quit){
         switch(event->type) {
             case SDL_KEYDOWN:
 
-                if (event->key.keysym.sym == SDLK_ESCAPE){
+                if (event->key.keysym.sym == SDLK_ESCAPE||event->key.keysym.sym == SDLK_p){
                     *quit = true;
                 }
 
