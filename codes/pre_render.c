@@ -19,15 +19,19 @@ void draw_matrix(SDL_Renderer** pRenderer,int** matrice, bloc* falling_meteor){
                 }
                 if (matrice[i][j]==3){
                 SDL_SetRenderDrawColor(*pRenderer, 127, 0, 255, 255);
-                } //METTRE LES BONNES COULEURS
+                }
                 if (matrice[i][j]==4){
                 SDL_SetRenderDrawColor(*pRenderer, 255, 128, 0, 255);
                 }
                 if (matrice[i][j]==5){
-                SDL_SetRenderDrawColor(*pRenderer, 255, 0, 0, 255);
+                SDL_SetRenderDrawColor(*pRenderer, 0, 0, 255, 255);
                 }
                 if (matrice[i][j]==6){
+                SDL_SetRenderDrawColor(*pRenderer, 255, 0, 0, 255);
+                }
+                if (matrice[i][j]==7){
                 SDL_SetRenderDrawColor(*pRenderer, 0, 255, 0, 255);
+            
                 }
 
             
@@ -53,7 +57,7 @@ void pre_render(SDL_Renderer** pRenderer, bloc * falling_meteor, int** matrice){
     switch(falling_meteor->son_nom){
         case I :
             // Définition de la couleur du rectangle (turquoise)
-            SDL_SetRenderDrawColor(*pRenderer, 64, 224, 208, 255);
+            SDL_SetRenderDrawColor(*pRenderer, 64, 224, 208, 255);//1
             printf("numero3\n");
             rectangle.x = falling_meteor->x;
             rectangle.y = falling_meteor->y;
@@ -75,7 +79,7 @@ void pre_render(SDL_Renderer** pRenderer, bloc * falling_meteor, int** matrice){
 
         case O:
             // Définition de la couleur du rectangle (jaune)
-            SDL_SetRenderDrawColor(*pRenderer, 255, 255, 0, 255);
+            SDL_SetRenderDrawColor(*pRenderer, 255, 255, 0, 255);//2
             rectangle.x = falling_meteor->x;
             rectangle.y = falling_meteor->y;
             rectangle.w = 2*taille_carreau;
@@ -88,7 +92,7 @@ void pre_render(SDL_Renderer** pRenderer, bloc * falling_meteor, int** matrice){
 
         case T:
             // Définition de la couleur du rectangle (violet)
-            SDL_SetRenderDrawColor(*pRenderer, 127, 0, 255, 255);
+            SDL_SetRenderDrawColor(*pRenderer, 127, 0, 255, 255);//3
 
             if (falling_meteor->rotation==0){
                 rectangle.x = falling_meteor->x;
@@ -139,7 +143,7 @@ void pre_render(SDL_Renderer** pRenderer, bloc * falling_meteor, int** matrice){
 
         case L:
              // Définition de la couleur du rectangle (orange)
-            SDL_SetRenderDrawColor(*pRenderer, 255, 128, 0, 255);
+            SDL_SetRenderDrawColor(*pRenderer, 255, 128, 0, 255);//4
             
             if (falling_meteor->rotation==0){
                 rectangle.x = falling_meteor->x;
@@ -190,7 +194,7 @@ void pre_render(SDL_Renderer** pRenderer, bloc * falling_meteor, int** matrice){
 
         case J:
             // Définition de la couleur du rectangle (bleu)
-            SDL_SetRenderDrawColor(*pRenderer, 0, 0, 255, 255);
+            SDL_SetRenderDrawColor(*pRenderer, 0, 0, 255, 255);//5
             
             if (falling_meteor->rotation==0){
                 rectangle.x = falling_meteor->x;
@@ -240,7 +244,7 @@ void pre_render(SDL_Renderer** pRenderer, bloc * falling_meteor, int** matrice){
             break;
         case Z:
             // Définition de la couleur du rectangle (rouge)
-            SDL_SetRenderDrawColor(*pRenderer, 255, 0, 0, 255);
+            SDL_SetRenderDrawColor(*pRenderer, 255, 0, 0, 255);//6
             
             if (falling_meteor->rotation==0||falling_meteor->rotation==2){
                 rectangle.x = falling_meteor->x;
@@ -271,7 +275,7 @@ void pre_render(SDL_Renderer** pRenderer, bloc * falling_meteor, int** matrice){
 
         default : //case S
             // Définition de la couleur du rectangle (vert)
-            SDL_SetRenderDrawColor(*pRenderer, 0, 255, 0, 255);
+            SDL_SetRenderDrawColor(*pRenderer, 0, 255, 0, 255);//7
             
             if (falling_meteor->rotation==0||falling_meteor->rotation==2){
                 rectangle.x = falling_meteor->x+taille_carreau;
