@@ -114,7 +114,7 @@ int main(int argc, char *argv[]){
             pre_render(&pRenderer,&falling_meteor, matrice);
             
             //Mettre à jour le jeu selon le joueur
-            entree_clavier (&falling_meteor, &event);
+            entree_clavier (&falling_meteor, &event, &quit);
             SDL_Delay(16);          
 
             printf("position du bloc : %d , %d\n",falling_meteor.x, falling_meteor.y);
