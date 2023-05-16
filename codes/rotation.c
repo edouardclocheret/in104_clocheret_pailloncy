@@ -70,7 +70,7 @@ void rotation (int sens, bloc* falling_meteor){
 }*/
 
     //on met à jour le nombre de rotation du bloc
-    falling_meteor->rotation=(falling_meteor->rotation+sens)%4;
+    falling_meteor->rotation=((falling_meteor->rotation+sens)+4)%4;
 
 }
 
