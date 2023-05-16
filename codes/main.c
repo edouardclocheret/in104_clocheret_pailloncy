@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
+
 //all types and global constants
 #ifndef TYPES_ET_VARS 
 #define TYPES_ET_VARS
@@ -65,22 +66,14 @@ int main(int argc, char *argv[]){
         SDL_Quit();         
         return EXIT_FAILURE;     
     }
-    printf("07\n");
+    
 
     //cette matrice représente les blocs déjà tombés
     int** matrice = create_matrix(20,10);
-    
-    //pour le test de collision !
-    matrice [17][3] = 5;
-    matrice [17][5] = 6;
-    matrice [17][6] = 3;
-
-
-
     bloc falling_meteor;
     SDL_bool quit = SDL_FALSE;
     SDL_Event event;
-    printf("08\n");
+    
 
     while((!quit) && (!game_over(matrice))){
         
@@ -125,41 +118,14 @@ int main(int argc, char *argv[]){
 
     SDL_Delay(1000);
     printf("11\n");
-    /*On mettra en place la boucle de jeu plus tard
-    //début du jeu
-
-    bool quit = false;
-
-    while(!quit) {
-
-        pre_render(arguments);
-
-        //entree_clavier (falling_meteor);
-
-        //updateTetris();
-
-        //update_renderer();
-
-        // Pour jouer à environ 60 fps
-        // 1000 ms/ 60 fps = 1/16 s^2/frame
-        SDL_Delay(16);
-    }
-    */
-
-
-    //SDL_RenderPresent(pRenderer);
+    
 
     if(NULL != pRenderer) SDL_DestroyRenderer(pRenderer);
     if(NULL != window) SDL_DestroyWindow(window);
 
+
     SDL_Quit();
 
-
-    // Libération de la mémoire allouée pour la matrice
-    /*for (int i = 0; i < ?; i++) {
-        free(matrice[i]);
-    }
-    free(matrice);*/
 
     return EXIT_SUCCESS;
 }
