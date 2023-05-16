@@ -22,7 +22,7 @@
 
 
 //the falling bloc will be labeled "falling_meteor"
-bool game_over(int ** matice){
+bool game_over(int ** matrice){
         if ((matrice[3][0]!=0)||(matrice[3][1]!=0)||(matrice[3][2]!=0)||(matrice[3][3]!=0)||(matrice[3][4]!=0)
         ||(matrice[3][5]!=0)||(matrice[3][6]!=0)||(matrice[3][7]!=0)||(matrice[3][8]!=0)||(matrice[3][9]!=0)){
             return true;
@@ -66,8 +66,7 @@ int main(int argc, char *argv[]){
         return EXIT_FAILURE;     
     }
     printf("07\n");
-    printf("10\n");
-    printf("position du bloc : %d , %d\n",falling_meteor.x, falling_meteor.y);
+    
     //cette matrice représente les blocs déjà tombés
     int** matrice = create_matrix(20,10);
     
