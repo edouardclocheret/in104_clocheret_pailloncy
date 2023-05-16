@@ -73,13 +73,14 @@ int main(int argc, char *argv[]){
     bloc falling_meteor;
     SDL_bool quit = SDL_FALSE;
     SDL_Event event;
-    
+    srand(time(NULL)); //pour que le tirage soit vraiment aléatoire
+
 
     while((!quit) && (!game_over(matrice))){
         
         //tirage d'un bloc
         //tirage au sort du bloc qui va apparaître :
-        int etat_tire = rand() % 7;
+        int etat_tire = rand() % 7 + 1;
         //int etat_tire = 1;
         if (etat_tire ==1) {falling_meteor.son_nom = I;
         printf("08.5\n");}
