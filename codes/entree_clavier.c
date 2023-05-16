@@ -36,11 +36,348 @@ void entree_clavier (bloc* falling_meteor, SDL_Event* event, SDL_bool* quit){
                 }
 
                 if (event->key.keysym.sym == SDLK_q){
+
                     rotation(-1, falling_meteor);
+                    //on vérifie que le bloc ne sorte pas du cadre
+                    int x1; 
+                    int x2; 
+                    int x3; 
+                    int x4; 
+                    switch (falling_meteor->son_nom){
+                                    case I :
+                                        
+                                        if (falling_meteor->rotation ==0||falling_meteor->rotation ==2){
+                                            
+                                            x1 = falling_meteor->x/taille_carreau;
+                                            x2 = x1+1;
+                                            x3 = x2+1;
+                                            x4 = x3+1;
+                                            
+                                        }
+                                        else if (falling_meteor->rotation ==1||falling_meteor->rotation ==3){
+                                            x1 = falling_meteor->x/taille_carreau;
+                                            x2 = x1;
+                                            x3 = x2;
+                                            x4 = x3;
+                                            
+                                        }
+                                    break;
+
+
+                                    case O :
+                                        x1 = falling_meteor->x/taille_carreau;
+                                        x2 = x1+1;
+                                        x3 = x1;
+                                        x4 = x2;
+                                        break;
+
+                                    case T :
+                                        
+                                        if (falling_meteor->rotation ==0){
+                                            x1 = falling_meteor->x/taille_carreau;
+                                            x2 = x1+1;
+                                            x3 = x2+1;
+                                            x4 = x2;
+                                            
+                                        }
+                                        else if (falling_meteor->rotation ==1){
+                                            x1 = falling_meteor->x/taille_carreau;
+                                            x2 = x1+1;
+                                            x3 = x2;
+                                            x4 = x3;
+                                            
+                                        }
+                                        else if (falling_meteor->rotation ==2){
+                                            x1 = falling_meteor->x/taille_carreau;
+                                            x2 = x1+1;
+                                            x3 = x2;
+                                            x4 = x3+1;
+                                            
+                                        }
+                                        else if (falling_meteor->rotation ==3){
+                                            x1 = falling_meteor->x/taille_carreau;
+                                            x2 = x1;
+                                            x3 = x1+1;
+                                            x4 = x1;
+                                            
+                                        }
+                                    break;   
+
+                                    case L :
+                                        
+                                        if (falling_meteor->rotation ==0){
+                                            x1 = falling_meteor->x/taille_carreau;
+                                            x2 = x1;
+                                            x3 = x2+1;
+                                            x4 = x3+1;
+                                            
+                                        }
+                                        else if (falling_meteor->rotation ==1){
+                                            x1 = falling_meteor->x/taille_carreau;
+                                            x2 = x1+1;
+                                            x3 = x2;
+                                            x4 = x3;
+                                            
+                                        }
+                                        else if (falling_meteor->rotation ==2){
+                                            x1 = falling_meteor->x/taille_carreau;
+                                            x2 = x1+1;
+                                            x3 = x2+1;
+                                            x4 = x3;
+                                            
+                                        }
+                                        else if (falling_meteor->rotation ==3){
+                                            x1 = falling_meteor->x/taille_carreau;
+                                            x2 = x1;
+                                            x3 = x1;
+                                            x4 = x1+1;
+                                            
+                                        }
+                                    break; 
+
+                                    case J :
+                                        printf("on est dans case J\n");
+                                        if (falling_meteor->rotation ==0){
+                                            x1 = falling_meteor->x/taille_carreau;
+                                            x2 = x1+1;
+                                            x3 = x2+1;
+                                            x4 = x3;
+                                            
+                                        }
+                                        else if (falling_meteor->rotation ==1){
+                                            x1 = falling_meteor->x/taille_carreau+1;
+                                            x2 = x1;
+                                            x3 = x1;
+                                            x4 = x3-1;
+                                            
+                                        }
+                                        else if (falling_meteor->rotation ==2){
+                                            x1 = falling_meteor->x/taille_carreau;
+                                            x2 = x1;
+                                            x3 = x1+1;
+                                            x4 = x3+1;
+                                            
+                                        }
+                                        else if (falling_meteor->rotation ==3){
+                                            x1 = falling_meteor->x/taille_carreau;
+                                            x2 = x1;
+                                            x3 = x1;
+                                            x4 = x1+1;
+                                            
+                                        }
+                                    break; 
+
+                                    case Z :
+                                        if (falling_meteor->rotation ==0||falling_meteor->rotation ==2){
+                                            x1 = falling_meteor->x/taille_carreau;
+                                            x2 = x1+1;
+                                            x3 = x2;
+                                            x4 = x3+1;
+                                            
+                                        }
+                                        else if (falling_meteor->rotation ==1||falling_meteor->rotation ==3){
+                                            x1 = falling_meteor->x/taille_carreau;
+                                            x2 = x1;
+                                            x3 = x1+1;
+                                            x4 = x3;
+                                        
+                                        }
+                                    break; 
+
+                                    case S :
+                                        if (falling_meteor->rotation ==0||falling_meteor->rotation ==2){
+                                            x1 = falling_meteor->x/taille_carreau;
+                                            x2 = x1+1;
+                                            x3 = x2;
+                                            x4 = x3+1;
+                                            
+                                        }
+                                        else if (falling_meteor->rotation ==1||falling_meteor->rotation ==3){
+                                            x1 = falling_meteor->x/taille_carreau;
+                                            x2 = x1;
+                                            x3 = x2+1;
+                                            x4 = x3;
+                                        
+                                        }
+                                    break; 
+                                        }
+                    
+                    //si l'action n'est pas autorisée on l'annule
+                    if (x1>9 || x2>9 || x3>9 || x4>9 ){
+                        rotation(1, falling_meteor);
+                    }
                 }
 
                 if (event->key.keysym.sym == SDLK_d){
                     rotation(1, falling_meteor);
+                    //on vérifie que le bloc ne sorte pas du cadre
+                    int x1; 
+                    int x2; 
+                    int x3; 
+                    int x4; 
+                    switch (falling_meteor->son_nom){
+                                    case I :
+                                        
+                                        if (falling_meteor->rotation ==0||falling_meteor->rotation ==2){
+                                            
+                                            x1 = falling_meteor->x/taille_carreau;
+                                            x2 = x1+1;
+                                            x3 = x2+1;
+                                            x4 = x3+1;
+                                            
+                                        }
+                                        else if (falling_meteor->rotation ==1||falling_meteor->rotation ==3){
+                                            x1 = falling_meteor->x/taille_carreau;
+                                            x2 = x1;
+                                            x3 = x2;
+                                            x4 = x3;
+                                            
+                                        }
+                                    break;
+
+
+                                    case O :
+                                        x1 = falling_meteor->x/taille_carreau;
+                                        x2 = x1+1;
+                                        x3 = x1;
+                                        x4 = x2;
+                                        break;
+
+                                    case T :
+                                        
+                                        if (falling_meteor->rotation ==0){
+                                            x1 = falling_meteor->x/taille_carreau;
+                                            x2 = x1+1;
+                                            x3 = x2+1;
+                                            x4 = x2;
+                                            
+                                        }
+                                        else if (falling_meteor->rotation ==1){
+                                            x1 = falling_meteor->x/taille_carreau;
+                                            x2 = x1+1;
+                                            x3 = x2;
+                                            x4 = x3;
+                                            
+                                        }
+                                        else if (falling_meteor->rotation ==2){
+                                            x1 = falling_meteor->x/taille_carreau;
+                                            x2 = x1+1;
+                                            x3 = x2;
+                                            x4 = x3+1;
+                                            
+                                        }
+                                        else if (falling_meteor->rotation ==3){
+                                            x1 = falling_meteor->x/taille_carreau;
+                                            x2 = x1;
+                                            x3 = x1+1;
+                                            x4 = x1;
+                                            
+                                        }
+                                    break;   
+
+                                    case L :
+                                        
+                                        if (falling_meteor->rotation ==0){
+                                            x1 = falling_meteor->x/taille_carreau;
+                                            x2 = x1;
+                                            x3 = x2+1;
+                                            x4 = x3+1;
+                                            
+                                        }
+                                        else if (falling_meteor->rotation ==1){
+                                            x1 = falling_meteor->x/taille_carreau;
+                                            x2 = x1+1;
+                                            x3 = x2;
+                                            x4 = x3;
+                                            
+                                        }
+                                        else if (falling_meteor->rotation ==2){
+                                            x1 = falling_meteor->x/taille_carreau;
+                                            x2 = x1+1;
+                                            x3 = x2+1;
+                                            x4 = x3;
+                                            
+                                        }
+                                        else if (falling_meteor->rotation ==3){
+                                            x1 = falling_meteor->x/taille_carreau;
+                                            x2 = x1;
+                                            x3 = x1;
+                                            x4 = x1+1;
+                                            
+                                        }
+                                    break; 
+
+                                    case J :
+                                        printf("on est dans case J\n");
+                                        if (falling_meteor->rotation ==0){
+                                            x1 = falling_meteor->x/taille_carreau;
+                                            x2 = x1+1;
+                                            x3 = x2+1;
+                                            x4 = x3;
+                                            
+                                        }
+                                        else if (falling_meteor->rotation ==1){
+                                            x1 = falling_meteor->x/taille_carreau+1;
+                                            x2 = x1;
+                                            x3 = x1;
+                                            x4 = x3-1;
+                                            
+                                        }
+                                        else if (falling_meteor->rotation ==2){
+                                            x1 = falling_meteor->x/taille_carreau;
+                                            x2 = x1;
+                                            x3 = x1+1;
+                                            x4 = x3+1;
+                                            
+                                        }
+                                        else if (falling_meteor->rotation ==3){
+                                            x1 = falling_meteor->x/taille_carreau;
+                                            x2 = x1;
+                                            x3 = x1;
+                                            x4 = x1+1;
+                                            
+                                        }
+                                    break; 
+
+                                    case Z :
+                                        if (falling_meteor->rotation ==0||falling_meteor->rotation ==2){
+                                            x1 = falling_meteor->x/taille_carreau;
+                                            x2 = x1+1;
+                                            x3 = x2;
+                                            x4 = x3+1;
+                                            
+                                        }
+                                        else if (falling_meteor->rotation ==1||falling_meteor->rotation ==3){
+                                            x1 = falling_meteor->x/taille_carreau;
+                                            x2 = x1;
+                                            x3 = x1+1;
+                                            x4 = x3;
+                                        
+                                        }
+                                    break; 
+
+                                    case S :
+                                        if (falling_meteor->rotation ==0||falling_meteor->rotation ==2){
+                                            x1 = falling_meteor->x/taille_carreau;
+                                            x2 = x1+1;
+                                            x3 = x2;
+                                            x4 = x3+1;
+                                            
+                                        }
+                                        else if (falling_meteor->rotation ==1||falling_meteor->rotation ==3){
+                                            x1 = falling_meteor->x/taille_carreau;
+                                            x2 = x1;
+                                            x3 = x2+1;
+                                            x4 = x3;
+                                        
+                                        }
+                                    break; 
+                                        }
+                    
+                    //si l'action n'est pas autorisée on l'annule
+                    if (x1>9 || x2>9 || x3>9 || x4>9 ){
+                        rotation(-1, falling_meteor);
+                    }
                 }
 
                 if (event->key.keysym.sym == SDLK_LEFT){
