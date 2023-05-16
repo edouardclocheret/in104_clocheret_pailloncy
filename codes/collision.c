@@ -53,11 +53,11 @@ bool collision(bloc* falling_meteor, int** matrice){
                 y4 = y1;
             }
             else if (falling_meteor->rotation ==1||falling_meteor->rotation ==3){
-                x1 = falling_meteor->x%taille_carreau;
+                x1 = falling_meteor->x/taille_carreau;
                 x2 = x1;
                 x3 = x2;
                 x4 = x3;
-                y1 = falling_meteor->y%taille_carreau;
+                y1 = falling_meteor->y/taille_carreau;
                 y2 = y1+1;
                 y3 = y2+1;
                 y4 = y3+1;
@@ -65,14 +65,207 @@ bool collision(bloc* falling_meteor, int** matrice){
         printf("%d,%d %d,%d %d,%d %d,%d\n", x1,y1,x2,y2,x3,y3,x4,y4);
         break;
 
-        //faire les cas I, O, T, L, J, Z, S
 
-        case O : 
+        case O :
+            printf("on est dans case O\n");
+            x1 = falling_meteor->x/taille_carreau;
+            x2 = x1+1;
+            x3 = x1;
+            x4 = x2;
+            y1 = falling_meteor->y/taille_carreau;
+            y2 = y1;
+            y3 = y1+1;
+            y4 = y3;
+            printf("%d,%d %d,%d %d,%d %d,%d\n", x1,y1,x2,y2,x3,y3,x4,y4);
+            break;
 
-        break;
+        case T :
+            printf("on est dans case T\n");
+            if (falling_meteor->rotation ==0){
+                x1 = falling_meteor->x/taille_carreau;
+                x2 = x1+1;
+                x3 = x2+1;
+                x4 = x2;
+                y1 = falling_meteor->y/taille_carreau;
+                y2 = y1;
+                y3 = y1;
+                y4 = y1+1;
+            }
+            else if (falling_meteor->rotation ==1){
+                x1 = falling_meteor->x/taille_carreau;
+                x2 = x1+1;
+                x3 = x2;
+                x4 = x3;
+                y1 = falling_meteor->y/taille_carreau+1;
+                y2 = y1-1;
+                y3 = y1;
+                y4 = y1+1;
+            }
+            else if (falling_meteor->rotation ==2){
+                x1 = falling_meteor->x/taille_carreau;
+                x2 = x1+1;
+                x3 = x2;
+                x4 = x3+1;
+                y1 = falling_meteor->y/taille_carreau+1;
+                y2 = y1-1;
+                y3 = y1;
+                y4 = y1;
+            }
+            else if (falling_meteor->rotation ==3){
+                x1 = falling_meteor->x/taille_carreau;
+                x2 = x1;
+                x3 = x1+1;
+                x4 = x1;
+                y1 = falling_meteor->y/taille_carreau;
+                y2 = y1+1;
+                y3 = y2;
+                y4 = y2+1;
+            }
+        printf("%d,%d %d,%d %d,%d %d,%d\n", x1,y1,x2,y2,x3,y3,x4,y4);
+        break;   
+
+        case L :
+            printf("on est dans case L\n");
+            if (falling_meteor->rotation ==0){
+                x1 = falling_meteor->x/taille_carreau;
+                x2 = x1;
+                x3 = x2+1;
+                x4 = x3+1;
+                y1 = falling_meteor->y/taille_carreau;
+                y2 = y1+1;
+                y3 = y1;
+                y4 = y1;
+            }
+            else if (falling_meteor->rotation ==1){
+                x1 = falling_meteor->x/taille_carreau;
+                x2 = x1+1;
+                x3 = x2;
+                x4 = x3;
+                y1 = falling_meteor->y/taille_carreau;
+                y2 = y1;
+                y3 = y1+1;
+                y4 = y3+1;
+            }
+            else if (falling_meteor->rotation ==2){
+                x1 = falling_meteor->x/taille_carreau;
+                x2 = x1+1;
+                x3 = x2+1;
+                x4 = x3;
+                y1 = falling_meteor->y/taille_carreau+1;
+                y2 = y1;
+                y3 = y1;
+                y4 = y1-1;
+            }
+            else if (falling_meteor->rotation ==3){
+                x1 = falling_meteor->x/taille_carreau;
+                x2 = x1;
+                x3 = x1;
+                x4 = x1+1;
+                y1 = falling_meteor->y/taille_carreau;
+                y2 = y1+1;
+                y3 = y2+1;
+                y4 = y3;
+            }
+        printf("%d,%d %d,%d %d,%d %d,%d\n", x1,y1,x2,y2,x3,y3,x4,y4);
+        break; 
+
+        case J :
+            printf("on est dans case J\n");
+            if (falling_meteor->rotation ==0){
+                x1 = falling_meteor->x/taille_carreau;
+                x2 = x1+1;
+                x3 = x2+1;
+                x4 = x3;
+                y1 = falling_meteor->y/taille_carreau;
+                y2 = y1;
+                y3 = y1;
+                y4 = y1+1;
+            }
+            else if (falling_meteor->rotation ==1){
+                x1 = falling_meteor->x/taille_carreau+1;
+                x2 = x1;
+                x3 = x1;
+                x4 = x3-1;
+                y1 = falling_meteor->y/taille_carreau;
+                y2 = y1+1;
+                y3 = y2+1;
+                y4 = y3;
+            }
+            else if (falling_meteor->rotation ==2){
+                x1 = falling_meteor->x/taille_carreau;
+                x2 = x1;
+                x3 = x1+1;
+                x4 = x3+1;
+                y1 = falling_meteor->y/taille_carreau;
+                y2 = y1;
+                y3 = y1;
+                y4 = y1;
+            }
+            else if (falling_meteor->rotation ==3){
+                x1 = falling_meteor->x/taille_carreau;
+                x2 = x1;
+                x3 = x1;
+                x4 = x1+1;
+                y1 = falling_meteor->y/taille_carreau;
+                y2 = y1+1;
+                y3 = y2+1;
+                y4 = y3;
+            }
+        printf("%d,%d %d,%d %d,%d %d,%d\n", x1,y1,x2,y2,x3,y3,x4,y4);
+        break; 
+
+        case Z :
+            printf("on est dans case Z\n");
+            if (falling_meteor->rotation ==0||falling_meteor->rotation ==2){
+                x1 = falling_meteor->x/taille_carreau;
+                x2 = x1+1;
+                x3 = x2;
+                x4 = x3+1;
+                y1 = falling_meteor->y/taille_carreau;
+                y2 = y1;
+                y3 = y1+1;
+                y4 = y3;
+            }
+            else if (falling_meteor->rotation ==1||falling_meteor->rotation ==3){
+                x1 = falling_meteor->x/taille_carreau;
+                x2 = x1;
+                x3 = x1+1;
+                x4 = x3;
+                y1 = falling_meteor->y/taille_carreau+1;
+                y2 = y1+1;
+                y3 = y1-1;
+                y4 = y1;
+            }
+        printf("%d,%d %d,%d %d,%d %d,%d\n", x1,y1,x2,y2,x3,y3,x4,y4);
+        break; 
+
+        case S :
+            printf("on est dans case S\n");
+            if (falling_meteor->rotation ==0||falling_meteor->rotation ==2){
+                x1 = falling_meteor->x/taille_carreau;
+                x2 = x1+1;
+                x3 = x2;
+                x4 = x3+1;
+                y1 = falling_meteor->y/taille_carreau+1;
+                y2 = y1;
+                y3 = y2-1;
+                y4 = y3;
+            }
+            else if (falling_meteor->rotation ==1||falling_meteor->rotation ==3){
+                x1 = falling_meteor->x/taille_carreau;
+                x2 = x1;
+                x3 = x2+1;
+                x4 = x3;
+                y1 = falling_meteor->y/taille_carreau;
+                y2 = y1;
+                y3 = y2;
+                y4 = y3+1;
+            }
+        printf("%d,%d %d,%d %d,%d %d,%d\n", x1,y1,x2,y2,x3,y3,x4,y4);
+        break; 
+            }
 
 
-    }
 
 
     ////////////////////////////////////////
