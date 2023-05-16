@@ -46,13 +46,13 @@ void entree_clavier (bloc* falling_meteor, SDL_Event* event, SDL_bool* quit){
 
                 if (event->key.keysym.sym == SDLK_LEFT){
                     if (falling_meteor->x>0){
-                        falling_meteor->x-=1;
+                        falling_meteor->x-=taille_carreau;
                     }
                 }
 
                 if (event->key.keysym.sym == SDLK_RIGHT){
                     if (falling_meteor->x<19*taille_carreau){
-                        falling_meteor->x+=1;
+                        falling_meteor->x+=taille_carreau;
                     }
                 }
                 

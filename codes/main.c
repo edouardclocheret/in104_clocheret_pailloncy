@@ -66,7 +66,7 @@ int main(int argc, char *argv[]){
         return EXIT_FAILURE;     
     }
     printf("07\n");
-    
+
     //cette matrice représente les blocs déjà tombés
     int** matrice = create_matrix(20,10);
     
@@ -104,7 +104,7 @@ int main(int argc, char *argv[]){
         SDL_Delay(500);
 
         //on utilise ce bloc jusqu'à ce qu'il touche le sol
-        while((collision(&falling_meteor, matrice)==0 )&& (!game_over(matrice))){
+        while((!quit) &&(collision(&falling_meteor, matrice)==0 )&& (!game_over(matrice))){
             printf("boucle\n");
 
             //faire descendre le bloc
