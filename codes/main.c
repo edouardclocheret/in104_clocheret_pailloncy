@@ -22,6 +22,14 @@
 
 
 //the falling bloc will be labeled "falling_meteor"
+bool game_over(int ** matice){
+        if ((matrice[3][0]!=0)||(matrice[3][1]!=0)||(matrice[3][2]!=0)||(matrice[3][3]!=0)||(matrice[3][4]!=0)
+        ||(matrice[3][5]!=0)||(matrice[3][6]!=0)||(matrice[3][7]!=0)||(matrice[3][8]!=0)||(matrice[3][9]!=0)){
+            return true;
+        }
+        return false;
+    }
+
 
 int main(int argc, char *argv[]){
     
@@ -58,13 +66,6 @@ int main(int argc, char *argv[]){
         return EXIT_FAILURE;     
     }
     printf("07\n");
-    
-    bloc falling_meteor;
-    bool quit = false;
-    SDL_Event event;
-    printf("08\n");
-    
-    
     printf("10\n");
     printf("position du bloc : %d , %d\n",falling_meteor.x, falling_meteor.y);
     //cette matrice représente les blocs déjà tombés
@@ -75,13 +76,12 @@ int main(int argc, char *argv[]){
     matrice [17][5] = 6;
     matrice [17][6] = 3;
 
-    bool game_over(int ** matice){
-        if ((matrice[3][0]!=0)||(matrice[3][1]!=0)||(matrice[3][2]!=0)||(matrice[3][3]!=0)||(matrice[3][4]!=0)
-        ||(matrice[3][5]!=0)||(matrice[3][6]!=0)||(matrice[3][7]!=0)||(matrice[3][8]!=0)||(matrice[3][9]!=0)){
-            return true;
-        }
-        return false;
-    }
+
+
+    bloc falling_meteor;
+    SDL_bool quit = SDL_FALSE;
+    SDL_Event event;
+    printf("08\n");
 
     while((!quit) && (!game_over(matrice))){
         
@@ -115,8 +115,8 @@ int main(int argc, char *argv[]){
             pre_render(&pRenderer,&falling_meteor, matrice);
             
             //Mettre à jour le jeu selon le joueur
-            entree_clavier (&falling_meteor, &event);          
-            SDL_Delay(16);
+            entree_clavier (&falling_meteor, &event);
+            SDL_Delay(16);          
 
             printf("position du bloc : %d , %d\n",falling_meteor.x, falling_meteor.y);
         }

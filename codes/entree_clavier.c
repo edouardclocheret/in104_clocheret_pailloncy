@@ -15,17 +15,28 @@
 
 //touche escape pour quitter 
 
-void entree_clavier (bloc* falling_meteor, SDL_Event* event, bool* quit){
+void entree_clavier (bloc* falling_meteor, SDL_Event* event, SDL_bool* quit){
     
-    while (SDL_PollEvent(event)) {
+    while (SDL_PollEvent(event)!=0) {
+
         switch(event->type) {
+            
+            case SDL_WINDOWEVENT:
+                if (event->window.event ==SDL_WINDOWEVENT_CLOSE) quit = SDL_TRUE;
+            break;
+
+            case SDL_QUIT :
+            if(event->type == SDL_QUIT) quit = SDL_TRUE;
+            break;
+
             case SDL_KEYDOWN:
 
                 if (event->key.keysym.sym == SDLK_ESCAPE||event->key.keysym.sym == SDLK_p){
-                    *quit = true;
+                    quit = SDL_TRUE;
                 }
 
                 if (event->key.keysym.sym == SDLK_q){
+                    printf("entrée de qq\n");
                     rotation(-1, falling_meteor);
                 }
 
