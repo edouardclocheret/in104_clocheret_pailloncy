@@ -60,41 +60,60 @@ int main(int argc, char *argv[]){
     printf("07\n");
     
     bloc falling_meteor;
+    bool quit = false;
+    SDL_Event event;
     printf("08\n");
-    //tirage au sort du bloc qui va apparaître :
-    //int etat_tire = rand() % 7;
-    int etat_tire = 1;
-    if (etat_tire ==1) {falling_meteor.son_nom = I;
-    printf("08.5\n");}
-    else if (etat_tire ==2) falling_meteor.son_nom = O;
-    else if (etat_tire ==3) falling_meteor.son_nom = T;
-    else if (etat_tire ==4) falling_meteor.son_nom = L;
-    else if (etat_tire ==5) falling_meteor.son_nom = J;
-    else if (etat_tire ==6) falling_meteor.son_nom = Z;
-    else if (etat_tire ==7) falling_meteor.son_nom = S;
-    printf("09\n");
-    falling_meteor.x = taille_carreau*3;
-    falling_meteor.y = 0;
-    falling_meteor.rotation = 0;
+    
+    
     printf("10\n");
     printf("position du bloc : %d , %d\n",falling_meteor.x, falling_meteor.y);
     //cette matrice représente les blocs déjà tombés
     int** matrice = create_matrix(20,10);
+    
     //pour le test de collision !
     matrice [4][3] = 2;
-    printf("Bloc en position 3,3 est %d comme couleur\n", matrice[4][3]);
-    SDL_Delay(1000);
+    matrice [10][5] = 2;
 
 
-    pre_render(&pRenderer,&falling_meteor, matrice);
-    while(collision(&falling_meteor, matrice)==0){
-        printf("boucle\n");
-        falling_meteor.y=falling_meteor.y+going_down;
-        pre_render(&pRenderer,&falling_meteor, matrice);
-        SDL_Delay(250);
+    while(!quit){
         
-        printf("position du bloc : %d , %d\n",falling_meteor.x, falling_meteor.y);
+        //tirage d'un bloc
+        //tirage au sort du bloc qui va apparaître :
+        //int etat_tire = rand() % 7;
+        int etat_tire = 1;
+        if (etat_tire ==1) {falling_meteor.son_nom = I;
+        printf("08.5\n");}
+        else if (etat_tire ==2) falling_meteor.son_nom = O;
+        else if (etat_tire ==3) falling_meteor.son_nom = T;
+        else if (etat_tire ==4) falling_meteor.son_nom = L;
+        else if (etat_tire ==5) falling_meteor.son_nom = J;
+        else if (etat_tire ==6) falling_meteor.son_nom = Z;
+        else if (etat_tire ==7) falling_meteor.son_nom = S;
+        printf("09\n");
+        falling_meteor.x = taille_carreau*3;
+        falling_meteor.y = 0;
+        falling_meteor.rotation = 0;
+        pre_render(&pRenderer,&falling_meteor, matrice);
+        SDL_Delay(500);
+
+        //on utilise ce bloc jusqu'à ce qu'il touche le sol
+        while(collision(&falling_meteor, matrice)==0){
+            printf("boucle\n");
+
+            //faire descendre le bloc
+            falling_meteor.y=falling_meteor.y+going_down;
+
+            //Mettre à jour l'affichage
+            pre_render(&pRenderer,&falling_meteor, matrice);
+            
+            //Mettre à jour le jeu selon le joueur
+            entree_clavier (&falling_meteor, &event);          
+            SDL_Delay(16);
+
+            printf("position du bloc : %d , %d\n",falling_meteor.x, falling_meteor.y);
+        }
     }
+    
     
 
     SDL_Delay(1000);

@@ -1,6 +1,6 @@
 
 #define taille_carreau 50
-#define going_down 10
+#define going_down 5
 //Il faut nécessairement taille carreau multiple de going_down 
 
 //A name is given to each tetris bloc
