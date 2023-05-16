@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-
+#include <time.h>
 
 //all types and global constants
 #ifndef TYPES_ET_VARS 
