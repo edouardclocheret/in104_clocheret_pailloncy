@@ -170,7 +170,6 @@ bool collision(bloc* falling_meteor, int** matrice){
         break; 
 
         case J :
-            printf("on est dans case J\n");
             if (falling_meteor->rotation ==0){
                 x1 = falling_meteor->x/taille_carreau;
                 x2 = x1+1;
@@ -197,9 +196,9 @@ bool collision(bloc* falling_meteor, int** matrice){
                 x3 = x1+1;
                 x4 = x3+1;
                 y1 = falling_meteor->y/taille_carreau;
-                y2 = y1;
-                y3 = y1;
-                y4 = y1;
+                y2 = y1+1;
+                y3 = y1+1;
+                y4 = y1+1;
             }
             else if (falling_meteor->rotation ==3){
                 x1 = falling_meteor->x/taille_carreau;
