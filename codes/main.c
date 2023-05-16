@@ -29,7 +29,20 @@ bool game_over(int ** matrice){
             return true;
         }
         return false;
+}
+
+void test_ligne_complete(int ** matrice){
+    for(int i=19;i>3;i-=1){
+        if(matrice[i][0]!=0 && matrice[i][1]!=0 && matrice[i][2]!=0 && matrice[i][3]!=0
+        && matrice[i][4]!=0 && matrice[i][5]!=0 && matrice[i][6]!=0 && matrice[i][7]!=0 && matrice[i][8]!=0 && matrice[i][9]!=0){
+            for(int j=i;i>=3;j-=1){
+                for (int k =0; k<10; k+=1){
+                    matrice[j][k]=matrice[j-1][k];}
+                
+            }
+        }
     }
+}
 
 
 int main(int argc, char *argv[]){
@@ -109,6 +122,7 @@ int main(int argc, char *argv[]){
             
             //Mettre à jour le jeu selon le joueur
             entree_clavier (&falling_meteor, &event, &quit);
+            test_ligne_complete(matrice);
             SDL_Delay(16);          
 
             printf("position du bloc : %d , %d\n",falling_meteor.x, falling_meteor.y);
