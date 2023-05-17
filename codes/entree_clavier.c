@@ -154,13 +154,10 @@ void entree_clavier (bloc* falling_meteor, SDL_Event* event, SDL_bool* quit, int
                     matrice[y1][x1]==0 &&matrice[y2][x2]==0
                     &&matrice[y3][x3]==0&&matrice[y4][x4]==0){
                         falling_meteor->y+=taille_carreau;
-                        printf("test\n");
-                        //on vérifie que le bloc ne sorte pas du cadre
-                        int x1; int y1;
-                        int x2; int y2;
-                        int x3; int y3;
-                        int x4; int y4;
-                        translate_bloc_to_positions(falling_meteor, &x1,&y1, &x2,&y2, &x3,&y3, &x4,&y4);
+                        y1++;
+                        y2++;
+                        y3++;
+                        y4++;                        
                     }
                     //si on est sorti du while c'est qu'on a fait un déplacement de trop
                     falling_meteor->y-=taille_carreau; 
