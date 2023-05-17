@@ -154,6 +154,7 @@ void entree_clavier (bloc* falling_meteor, SDL_Event* event, SDL_bool* quit, int
                     matrice[y1][x1]==0 &&matrice[y2][x2]==0
                     &&matrice[y3][x3]==0&&matrice[y4][x4]==0){
                         falling_meteor->y+=taille_carreau;
+                        printf("test\n");
                         //on vérifie que le bloc ne sorte pas du cadre
                         int x1; int y1;
                         int x2; int y2;
