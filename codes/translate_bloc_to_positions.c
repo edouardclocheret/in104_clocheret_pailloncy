@@ -216,7 +216,7 @@ void translate_bloc_to_positions(bloc* falling_meteor, int*x1,int*y1, int*x2,int
                 *x3 = *x2+1;
                 *x4 = *x3;
                 *y1 = falling_meteor->y/taille_carreau;
-                *y2 = *y1;
+                *y2 = *y1+1;
                 *y3 = *y2;
                 *y4 = *y3+1;
             }
