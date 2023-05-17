@@ -12,7 +12,6 @@
 #endif
 
 //all functions
-#include "down.h"
 #include "entree_clavier.h"
 #include "initialisation.h"
 #include "rotation.h"
@@ -121,7 +120,7 @@ int main(int argc, char *argv[]){
             pre_render(&pRenderer,&falling_meteor, matrice);
             
             //Mettre à jour le jeu selon le joueur
-            entree_clavier (&falling_meteor, &event, &quit);
+            entree_clavier (&falling_meteor, &event, &quit, matrice);
             test_ligne_complete(matrice);
             SDL_Delay(16);          
 
