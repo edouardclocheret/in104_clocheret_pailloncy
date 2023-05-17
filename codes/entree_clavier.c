@@ -151,8 +151,8 @@ void entree_clavier (bloc* falling_meteor, SDL_Event* event, SDL_bool* quit, int
                     &&x1<=9 && x2<=9 && x3<=9 && x4<=9 
                     &&y1<=19 &&y2<=19&&y3<=19&&y4<=19
                     &&y1>=0&&y2>=0&&y3>=0&&y4>=0&&
-                    matrice[y1][x1]!=0 &&matrice[y2][x2]!=0
-                    &&matrice[y3][x3]!=0&&matrice[y4][x4]!=0){
+                    matrice[y1][x1]==0 &&matrice[y2][x2]==0
+                    &&matrice[y3][x3]==0&&matrice[y4][x4]==0){
                         falling_meteor->y+=taille_carreau;
                         //on vérifie que le bloc ne sorte pas du cadre
                         int x1; int y1;
