@@ -30,6 +30,10 @@ void entree_clavier (bloc* falling_meteor, SDL_Event* event, SDL_bool* quit, int
             break;
 
             case SDL_KEYDOWN:
+                if (event->key.keysym.sym == SDLK_m){
+                    //met le jeu en pause tant qu'on ne touche pas au clavier
+                    SDL_WaitEvent(event);
+                }
 
                 if (event->key.keysym.sym == SDLK_ESCAPE||event->key.keysym.sym == SDLK_p){
                     *quit = SDL_TRUE;
