@@ -5,15 +5,17 @@
 #include "rotation.h"
 #include "translate_bloc_to_positions.h"
 
-//entree clavier non bloquante 
+//Attribution des touches du clavier :
 //touche Q pour tourner le bloc vers la gauche 
 //touche D pour tourner le bloc vers la droite 
-
+//touche S pour faire tomber le bloc directement
 
 //flèche vers la droite pour translation vers la droite
 //flèche vers la gauche pour translation vers la gauche
 
-//touche escape pour quitter 
+//touches escape ou p pour quitter 
+
+//la croix en haut de la fenêtre permet aussi de quitter le programme
 
 void entree_clavier (bloc* falling_meteor, SDL_Event* event, SDL_bool* quit, int ** matrice){
     
