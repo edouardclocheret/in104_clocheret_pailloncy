@@ -95,14 +95,13 @@ int main(int argc, char *argv[]){
         int etat_tire = rand() % 7 + 1;
         //int etat_tire = 1;
         if (etat_tire ==1) {falling_meteor.son_nom = I;
-        printf("08.5\n");}
         else if (etat_tire ==2) falling_meteor.son_nom = O;
         else if (etat_tire ==3) falling_meteor.son_nom = T;
         else if (etat_tire ==4) falling_meteor.son_nom = L;
         else if (etat_tire ==5) falling_meteor.son_nom = J;
         else if (etat_tire ==6) falling_meteor.son_nom = Z;
         else if (etat_tire ==7) falling_meteor.son_nom = S;
-        printf("09\n");
+        
         falling_meteor.x = taille_carreau*3;
         falling_meteor.y = 0;
         falling_meteor.rotation = 0;

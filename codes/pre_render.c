@@ -48,12 +48,12 @@ void pre_render(SDL_Renderer** pRenderer, bloc * falling_meteor, int** matrice){
     //On remet d'abort à zero le rendu
     SDL_SetRenderDrawColor(*pRenderer, 0, 0, 0, 255); //noir
     SDL_RenderClear(*pRenderer);
-    printf("numero1\n");
+
     
     
     SDL_Rect rectangle;
     SDL_Rect rectangle2;
-    printf("numero2\n");
+
     switch(falling_meteor->son_nom){
         case I :
             // Définition de la couleur du rectangle (turquoise)
@@ -305,7 +305,7 @@ void pre_render(SDL_Renderer** pRenderer, bloc * falling_meteor, int** matrice){
             break;
 
     }
-printf("numero6\n");
+
 
 //dessin des blocs déjà tombés
 draw_matrix(pRenderer,matrice, falling_meteor);
