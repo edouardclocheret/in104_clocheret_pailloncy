@@ -94,7 +94,7 @@ int main(int argc, char *argv[]){
         //tirage au sort du bloc qui va apparaître :
         int etat_tire = rand() % 7 + 1;
         //int etat_tire = 1;
-        if (etat_tire ==1) {falling_meteor.son_nom = I;
+        if (etat_tire ==1) falling_meteor.son_nom = I;
         else if (etat_tire ==2) falling_meteor.son_nom = O;
         else if (etat_tire ==3) falling_meteor.son_nom = T;
         else if (etat_tire ==4) falling_meteor.son_nom = L;
